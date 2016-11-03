@@ -1,0 +1,42 @@
+﻿% This file was created with Citavi 5.4.0.2
+
+@book{Bacher.2002,
+ author = {Bacher, Johann},
+ year = {2002},
+ title = {Clusteranalyse: Anwendungsorientierte Einführung},
+ price = {DM 49.80, S 369.00, sfr 49.80},
+ address = {München},
+ edition = {2., erg. Aufl., [Nachdr.]},
+ publisher = {Oldenbourg},
+ isbn = {3-486-23760-8}
+}
+
+
+@book{Bacher.2010,
+ author = {Bacher, Johann andPöge, Andreas andWenzig, Knut},
+ year = {2010},
+ title = {Clusteranalyse: Anwendungsorientierte Einführung in Klassifikationsverfahren},
+ url = {\url{http://deposit.d-nb.de/cgi-bin/dokserv?id=3064245&prov=M&dok_var=1&dok_ext=htm}},
+ price = {EUR 39.80},
+ keywords = {Clusteranalyse;Cluster-Analyse;Lineare Algebra;Mathematische Statistik;Numerische Mathematik;Theorie},
+ address = {München},
+ edition = {3., erg., vollst. überarb. und neu gestaltete Aufl.},
+ publisher = {Oldenbourg},
+ isbn = {9783486710236}
+}
+
+
+@book{Bankhofer.2008,
+ author = {Bankhofer, Udo andVogel, Jürgen},
+ year = {2008},
+ title = {Datenanalyse und Statistik: Eine Einführung für Ökonomen im Bachelor ; [Bachelor geeignet!]},
+ price = {kart. : EUR 24.90},
+ keywords = {Datenanalyse},
+ address = {Wiesbaden},
+ edition = {1. Aufl.},
+ publisher = {Gabler},
+ isbn = {3834904341},
+ series = {Lehrbuch}
+}
+
+

@@ -1,0 +1,72 @@
+\documentclass[ngerman, headsepline,footsepline,12pt]{scrreprt}
+
+\usepackage[breaklinks,colorlinks=true,citecolor=blue,linkcol or=blue,urlcolor=blue,filecolor=blue]{hyperref}
+\usepackage{times}
+\usepackage{graphicx,color}
+\usepackage{url}
+\usepackage{hyperref} %clickable URL
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage{tabularx}       % Fuer Tabellen laenger als eine Seite
+\usepackage{multicol}
+
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage[automark]{scrpage2}
+\pagestyle{scrheadings}
+
+% --------------------
+
+% Seitendefinitionen
+
+\setlength{\topmargin}{1.5cm}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{20pt}
+\setlength{\topskip}{12pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\textheight}{240mm}
+\setlength{\textwidth}{160mm}
+\setlength{\voffset}{-2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\nocite{*}
+\input{inc/title}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\input{inc/motivation}
+\input{inc/bewertungskriterien}
+\input{inc/verfahren}
+\input{inc/regelwerk}
+
+% \input{inc/intro}
+
+% Literaturverzeichnis
+\newpage
+\bibliographystyle{alpha}
+\bibliography{bibs/literatur}
+
+\end{document}
+
