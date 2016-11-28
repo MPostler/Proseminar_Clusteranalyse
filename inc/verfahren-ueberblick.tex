@@ -1,1 +1,20 @@
 \chapter{Ein Überblick über Clusteranalyse-Verfahren}
+
+Nach Backhaus et al \cite{Backhaus.2016} lassen sich vier übergeordnete Gruppierungen von Clusterverfahren darstellen:
+
+\begin{enumerate}
+	\item Partitionierende Verfahren: Diese Algorithmen benötigen eine vorgegebene Clusteranzahl, in die sie die Objekte einzuordnen versuchen. Unterschiede zwischen den einzelnen Verfahren entstehen hierbei vor allem durch die unterschiedliche Messung der Verbesserung der Clusterbildung und in der Regelung des Austauschs der Objekte zwischen den Clustern.
+	\item Hierarchische Verfahren: Im Gegensatz zu partitionierenden Verfahren benötigen diese Algorithmen keine vorgegebene Clusteranzahl, sondern iterieren alle möglichen Clusteranzahlen durch. Hierarchisch divisive Verfahren gehen dabei von der größtmöglichen Partition aus, die sie Schritt für Schritt in die kleinstmöglichen Partitionen zerlegen (ein Objekt in einer Partition). Hierarchisch agglomerative Verfahren dagegen fassen die feinsten Partitionen zu immer größeren Gruppen zusammen, bis schließlich die größtmögliche Partition erreicht ist, die alle Objekte enthält.
+	\item Graphentheoretische Verfahren
+	\item Optimierungsverfahren
+\end{enumerate}
+
+\cite{Pedrycz.2010} Algorithmen für divisive brauchen mehr Rechenzeit, kein Beweis dafür, dass divisive Strategien präzisere Cluster liefern -> deswegen agglomerative in Praxis einfacher
+
+Die partitionierenden Verfahren lassen sich wiederum in Austauschverfahren und iterierte Minimaldistanzverfahren unterscheiden.
+
+\cite{Xu.1999} erwähnt weiterhin noch Single Scan Clustering, den BIRCH-Algorithmus, den STING-Algorithmus und Grid Clustering. Diese speziellen Algorithmen dienen der Klassifizierung von räumlichen Datenbanken (Spatial Databases).
+
++ Abbildung in \cite{Backhaus.2016} S.476??? Überblick normal über Clusterverfahren
++ Abbildung in \cite{Xu.1999} S. 21??? Unterschied hierarchisch/agglomerativ sehr gut
++ Ref auf Chapter hierarchisch-agglomerative Verfahren
