@@ -6,9 +6,40 @@ Nach Backhaus et al \cite{Backhaus.2016} lassen sich zwei Arten von Proximitäts
 
 \begin{enumerate}
 	\item Ähnlichkeitsmaße: Diese Maße spiegeln die Ähnlichkeit zweier Objekte wider. Je höher der zugewiesene Wert für zwei Objekte, desto höher ist auch ihre Ähnlichkeit.
-	\item Distanzmaße: Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind. Die Distanzmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht. (Eckey et al \cite{Eckey.2002}). 
+	\item Distanzmaße: Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind. Die Distanzmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht. (Eckey et al \cite{Eckey.2002}). + auch eine Art von Unähnlichkeitsmaßen nach \cite{Bacher.2010} S. 195
 \end{enumerate}
 
 \cite{Eckey.2002} wenn mathematische Eigenschaften noch mit aufgenommen werden sollen
 
 Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
+
+Die Wahl eines Proximitätsmaß für eine Clusteranalyse hängt laut \cite{Bacher.2010} S. 196 maßgeblich davon ab, ob die Clusteranalyse Objekte oder Variablen zu klassifizieren versucht. + falls benötigt hier noch Welche Eigenschaft? -> Welches Maß
+
+Übersicht generieren: 
+
+\begin{tabular}{|l|l|}
+	 \hline
+	 Dichotome Variablen & City-Block-Metrik \\
+	 & Quadrierte Euklidische Distanz \\
+	 & Produkt-Moment-Korrelationskoeffizient \\ \hline
+	 Nominale Variablen & Dummybildung sonst wie Dichotome Variablen \\ \hline
+	 Ordinale Variablen & City-Block Metrik \\ 
+	 & Canberra-Metrik \\
+	 & JACCARD-II-Koeffizient \\
+	 & verallgemeinerter Simple-Matching-Koeffizient für ordinale Variablen \\
+	 & Übereinstimmungskoeffizient für ordinale Variablen \\ \hline
+	 Quantitative Variablen & Produkt-Moment-Korellation \\
+	 & City-Block-Metrik \\
+	 & euklidische Distanz \\
+	 & quadrierte euklidische Distanz \\
+	 & Chebychev-Distanz \\ \hline
+\end{tabular}
+
+
+\cite{Bacher.2010} S. 200 Alle Ähnlichkeitsmaße lassen sich durch 
+
+\begin{equation}
+u_{ij} = 1 - a_{ij} \quad bzw.\quad u_{g,g*} = 1- a_{g,g*}
+\end{equation}
+
+in Unähnlichkeitsmaße umwandeln.
