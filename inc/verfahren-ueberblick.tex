@@ -1,6 +1,6 @@
-\chapter{Ein Überblick über Clusteranalyse-Verfahren}
+\chapter{Ein Überblick über Clusteranalyseverfahren}
 
-Nach Backhaus et al \cite{Backhaus.2016} lassen sich vier übergeordnete Gruppierungen von Clusterverfahren darstellen:
+Nach Backhaus et al \cite{Backhaus.2016} lassen sich vier übergeordnete Gruppierungen von Clusteranalyseverfahren darstellen:
 
 \begin{enumerate}
 	\item Partitionierende Verfahren: Diese Algorithmen benötigen eine vorgegebene Clusteranzahl, in die sie die Objekte einzuordnen versuchen. Unterschiede zwischen den einzelnen Verfahren entstehen hierbei vor allem durch die unterschiedliche Messung der Verbesserung der Clusterbildung und in der Regelung des Austauschs der Objekte zwischen den Clustern.
@@ -8,6 +8,17 @@ Nach Backhaus et al \cite{Backhaus.2016} lassen sich vier übergeordnete Gruppie
 	\item Graphentheoretische Verfahren
 	\item Optimierungsverfahren
 \end{enumerate}
+
+\cite{Bacher.2010} S. 18 unterscheidet andere Clusteranalyseverfahren auf Grundlage der Zuordnung der Klassifikationsobjekte zu den Clustern:
+
+\begin{enumerate}
+	\item Unvollständige Clusteranalyseverfahren: auch geometrische Methoden, Repräsentations- oder Projektverfahren, führen nur zu einer räumlichen Darstellung, nur bis dreidimensionalen Raum möglich
+	\item Deterministische Clusteranalyseverfahren: Klassifikationsobjekte werden mit Wahrscheinlichkeit 1 einem oder mehreren Clustern zugeordnet, 
+	\item Probabilistische Clusteranalyseverfahren: Fuzzy, Klassifikationsobjekte werden verschiedenen Clustern mit einer Wahrscheinlichkeit zwischen 0 und 1 zugeordnet, Verallgemeinerung der Deterministischen Clusteranalyseverfahren (Annahme, dass w = 0 oder 1 wird fallen gelassen)
+\end{enumerate}
+S.20/21 \cite{Bacher.2010} Unterscheidung auch in heuristische und modellbasierte Verfahren, Grafik zeigt Vergleich zwischen diesen und dem Bacher.2010-Schema
+
+Gedanke: Graphentheoretische Verfahren/Optimierungsverfahren in Bacher.2010-Schema einordnen?
 
 \cite{Pedrycz.2010} Algorithmen für divisive brauchen mehr Rechenzeit, kein Beweis dafür, dass divisive Strategien präzisere Cluster liefern -> deswegen agglomerative in Praxis einfacher
 
