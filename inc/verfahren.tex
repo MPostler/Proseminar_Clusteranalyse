@@ -1,6 +1,7 @@
 \chapter{Hierarchisch-agglomerative Verfahren}
 
 In diesem Kapitel sollen einzelne Verfahren untersucht werden. Zudem beschränken wir uns auf die gebräuchlichsten hierarchisch-agglomerativen Verfahren, da sich Austausch- oder divisive Verfahren in der Praxis nicht bewährt haben.
+\cite{Piegorsch.2015} S. 378 Der Austausch des zugrundeliegenden Verfahren kann Fluch oder Segen sein: Die Verwendung eines anderen Verfahrens auf Basis der selben Daten zeigt interessante oder unerwartete Änderungen im Ergebnis der Clusteranalyse. Dies ist eine Beobachtung, die den zugrundeliegenden Prozess der Wissensschöpfung verbessern kann.
 
 \section{Single Linkage-Verfahren}
 Bei dem Single Linkage-Verfahren können sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Dabei werden jeweils die zwei Cluster zusammengefasst, welche die kleinste Distanz zwischen sich aufweisen. Die Distanz entspricht dabei der kleinstmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Nach dem bilden eines neuen Clusters muss die Distanz jeweils neu ausgerechnet werden. 
@@ -8,11 +9,15 @@ Nach Backhaus \cite{Backhaus.2016} kann die neue Distanz vereinfacht mit folgend
 \begin{equation}
 D(R;P+Q) = min\{D(R,P);D(R,Q)\}
 \end{equation}
-Aufgrund des Vorgehens wird dieses Verfahren auch "Nearest-Neighbour-Verfahren" genannt.
-Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden um Ausreißer zu identifiezieren. (Vgl. Backhaus \cite{Backhaus.2016}, S.481-483)
+Aufgrund des Vorgehens wird dieses Verfahren auch "Nearest-Neighbour-Verfahren" genannt. \cite{Eckey.2002} S. 231
+Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden um Ausreißer zu identifizieren. (Vgl. Backhaus \cite{Backhaus.2016}, S.481-483)
+Dieses Verfahren erzeugt oft Cluster, die ziemlich diffus, langgestreckt oder unförmig sind. \cite{Piegorsch.2015} S. 377 
+Hierbei entsteht allerdings auch das Problem der Verkettung: \colorbox{red}{Hier eckey einfügen, der Problem gut erklärt}
+Nach \cite{Clarke.2009} S. 416 sind solche ungewöhnlichen Strukturen in der Natur allerdings durchaus üblich. "...it's unclear in general wehether such properties are features or bugs." 
+
 
 \section{Complete Linkage-Verfahren}
-Bei dem Complete Linkage-Verfahren können ebenfalls sowohl Ähnlichkeits- als auch Sistanzmaße verwendet werden. Es werden jeweils die Clsuter mit der geringsten Distanz zusammengefasst. Die Distanz berechnet sich allerdings anders als beim Single Linkage-Verfahren. Die Distanz zwischen Clustern entspricht hier nicht der kleinstmöglichen sondern der größtmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Auch hier muss nach jedem Zusammenfassen der Cluster die Distanz neu berechnet werden.
+Bei dem Complete Linkage-Verfahren können ebenfalls sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Es werden jeweils die Cluster mit der geringsten Distanz zusammengefasst. Die Distanz berechnet sich allerdings anders als beim Single Linkage-Verfahren. Die Distanz zwischen Clustern entspricht hier nicht der kleinstmöglichen sondern der größtmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Auch hier muss nach jedem Zusammenfassen der Cluster die Distanz neu berechnet werden.
 Nach Backhaus \cite{Backhaus.2016} kann die neue Distanz vereinfacht mit folgender Formel errechnet werden:
 \begin{equation}
 D(R;P+Q) = max\{D(R,P);D(R,Q)\}
