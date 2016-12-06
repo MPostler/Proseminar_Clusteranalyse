@@ -12,6 +12,11 @@ Quantitative Merkmal besitzen einen hohen Informationsgehalt und ihre Ausprägun
         \item Nominale Merkmale: Diese Merkmale gehören zu den qualitativen Merkmalen. Die Merkmalsausprägungen werden durch Begriffe dargestellt. Die Ausprägungen besitzen dabei keine Ordnung. Die Ausprägungen können lediglich auf Gleichheit oder Ungleichheit überprüft werden. Diese Merkmale besitzen den niedrigsten Informationsgehalt.
 \end{enumerate}
 
+\section{explorative und konfirmatorische Lösungen}
+Clusterverfahren können nach Bacher \cite{Bacher.2010} in explorative und konfirmatorische Clusterverfahren unterschieden werden. 
+Bei explorativen Verfahren steht die Anzahl der Cluster sowie die kennzeichnende Merkmalsausprägung nicht schon im Vorhinein fest.
+Bei konfirmatorischen Verfahren steht die Anzahl der Cluster und die Charakteristik der Cluster bereits vor dem anwenden der Verfahren fest.
+
 \section{Disjunkte und nicht-disjunkte Zuordnung}
 Nach Bankhofer \cite{Bankhofer.2008} können Clusterlösungen in disjunkte und nicht disjunkte Lösungen unterteilt werden. Diese Klassizifierung der Cluster beschreibt ob Objekte mehreren Klassen zugeordnet werden können oder nur Bestandteil einer Klasse sind.
 \begin{enumerate}
@@ -38,4 +43,12 @@ Nach Bankhofer \cite{Bankhofer.2008} kann die Heterogenität durch die Zwischenk
         \item Single Linkage: Die minimale Distanz zwischen zwei Objekten der betrachteten Cluster wird zur Darstellung genutzt.
         \item Average Linkage: Die mittlere Distanz zwischen den Objekten der betrachteten Cluster wird zur Darstellung genutzt.
         \item Complete Linkage: Die maximale Distanz zwischen zwei Objekten der betrachteten Cluster wird zur Darstellung genutzt.
+\end{enumerate}
+
+\section{Fusionierungseigenschaften}
+Clusterverfahren lassen sich nach Backhaus \cite{Backhaus.2016}anhand ihrer Fusionierungseigenschaften in drei Gruppen unterteilen:
+\begin{enumerate}
+        \item Dilatierende Verfahren: Bei diesen Verfahren werden die Objekte in einzelne etwa gleich große Gruppen zusammengefasst.
+        \item Kontrahierende Verfahren: Bei diesen Verfahren stehen viele kleine Gruppen wenigen großen Gruppen gegenüber.
+        \item Konservative Verfahren: Diese Verfahren weisen weder Konstrahierende noch Dilatierende Merkmale auf.
 \end{enumerate}

@@ -3,10 +3,27 @@
 In diesem Kapitel sollen einzelne Verfahren untersucht werden. Zudem beschränken wir uns auf die gebräuchlichsten hierarchisch-agglomerativen Verfahren, da sich Austausch- oder divisive Verfahren in der Praxis nicht bewährt haben.
 
 \section{Single Linkage-Verfahren}
+Bei dem Single Linkage-Verfahren können sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Dabei werden jeweils die zwei Cluster zusammengefasst, welche die kleinste Distanz zwischen sich aufweisen. Die Distanz entspricht dabei der kleinstmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Nach dem bilden eines neuen Clusters muss die Distanz jeweils neu ausgerechnet werden. 
+Nach Backhaus \cite{Backhaus.2016} kann die neue Distanz vereinfacht mit folgender Formel errechnet werden:
+\begin{equation}
+D(R;P+Q) = min\{D(R,P);D(R,Q)\}
+\end{equation}
+Aufgrund des Vorgehens wird dieses Verfahren auch "Nearest-Neighbour-Verfahren" genannt.
+Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden um Ausreißer zu identifiezieren. (Vgl. Backhaus \cite{Backhaus.2016}, S.481-483)
+
 \section{Complete Linkage-Verfahren}
+Bei dem Complete Linkage-Verfahren können ebenfalls sowohl Ähnlichkeits- als auch Sistanzmaße verwendet werden. Es werden jeweils die Clsuter mit der geringsten Distanz zusammengefasst. Die Distanz berechnet sich allerdings anders als beim Single Linkage-Verfahren. Die Distanz zwischen Clustern entspricht hier nicht der kleinstmöglichen sondern der größtmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Auch hier muss nach jedem Zusammenfassen der Cluster die Distanz neu berechnet werden.
+Nach Backhaus \cite{Backhaus.2016} kann die neue Distanz vereinfacht mit folgender Formel errechnet werden:
+\begin{equation}
+D(R;P+Q) = max\{D(R,P);D(R,Q)\}
+\end{equation}
+Aufgrund des Vorgehens wird dieses Verfahren auch "Furthest-Neighbour-Verfahren" genannt.
+Dieses Verfahren ist ein dilatierendes Verfahren. Es eignet sich im Gegensatz zum Single Linkage- Verfahren nicht gut um Ausreißer zu identifizieren, da es eher kleine Gruppen bildet. (Vgl. Backhaus \cite{Backhaus.2016}, S.483/484)
+
 \section{Average Linkage-Verfahren}
 \section{Zentroid-Verfahren}
 \section{Median-Verfahren}
 \section{WARD-Verfahren}
 
 + Abbildung in \cite{Backhaus.2016} S.489??? Fusionierungseigenschaften -> Wie reagieren Verfahren?
+Abbildung kann rein, Fusionierungseigenschaften vielleicht unter 2.Clusterlösungen erklären?
