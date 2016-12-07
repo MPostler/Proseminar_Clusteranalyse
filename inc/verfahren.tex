@@ -26,9 +26,24 @@ Aufgrund des Vorgehens wird dieses Verfahren auch "Furthest-Neighbour-Verfahren"
 Dieses Verfahren ist ein dilatierendes Verfahren. Es eignet sich im Gegensatz zum Single Linkage- Verfahren nicht gut, um Ausreißer zu identifizieren, da es eher kleine Gruppen bildet. (Vgl. Backhaus \cite{Backhaus.2016}, S.483/484) Ein Problem der Orientierung an den maximal entfernten Objekten zweier Cluster stellt das Ausbleiben einer Fusionierung dar, selbst wenn die mittlere Distanz dieser zweier Objekte keine merkliche Erhöhung der Heterogenität im neu zu bildenden Cluster anzeigen würde. (Vgl. Eckey et al. \cite{Eckey.2002}, S.236)
 
 \section{Average Linkage-Verfahren}
-\section{Zentroid-Verfahren}
+\section{Centroid-Verfahren}
 \section{Median-Verfahren}
 \section{WARD-Verfahren}
+Das Ward-Verfahren wird oft als sehr guter Clusteralgorithmus gesehen, da es im Vergleich zu anderen Verfahren sehr gute Partitionen findet und Objekte "richtig" den Clustern zuordnet. Dazu müssen jedoch folgende Bedingungen gegeben sein: Verwendung eines Distanzmaßes, alle Variablen metrisches Skalenniveau, keine Ausreißer vor Anwendung des Verfahrens, Variablen sind unkorelliert, Elementanzahl in jeder Gruppe ca. gleich groß )(zu erwarten),Cluster besitzen gleiche Ausdehnung, 
+
+Ward neigt jedoch dazu, möglichst gleich große Cluster zu bilden und langgestreckte Cluster bzw. kleine Cluster mit wenigen Objekten nicht zu erkennen \cite{Backhaus.2016} S. 489, auch Grafik
 
 + Abbildung in \cite{Backhaus.2016} S.489??? Fusionierungseigenschaften -> Wie reagieren Verfahren?
 Abbildung kann rein, Fusionierungseigenschaften vielleicht unter 2.Clusterlösungen erklären?
+
+
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\rowcolor{babyblueeyes}Verfahren & Eigenschaft & Monoton? & Proximitätsmaße & Bemerkungen \\ \hline
+	\rowcolor{beaublue}Single Linkage & kontrahierend & ja & alle & neigt zur Kettenbildung \\ \hline
+	\rowcolor{beaublue}Complete Linkage & dilatierend & ja & alle & neigt zu kleinen Gruppen \\ \hline	
+	\rowcolor{beaublue}Average Linkage & konservativ & ja & alle & \\ \hline
+	\rowcolor{beaublue}Centroid & konservativ & nein & Distanzmaße & \\ \hline
+	\rowcolor{beaublue}Median & konservativ & nein & Distanzmaße & \\ \hline
+	\rowcolor{beaublue}WARD & konservativ & ja & Distanzmaße & bildet etwa gleich große Gruppen \\ \hline
+\end{tabular}
