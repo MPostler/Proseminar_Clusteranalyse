@@ -43,13 +43,23 @@ Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich eine 
 \section{Proximitätsmaße für dichotome Merkmale}
 Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen. (Vgl. Eckey et al. \cite{Eckey.2002}, S. 218). 
 
-\colorbox{red}{Hier Vierfeldertafel erklären}
+Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenpaar zu definieren, kommt oft eine Vierfeldertafel zum Einsatz: \\
+
+\begin{tabular}{cc|cc|c}
+	& & \multicolumn{2}{c|}{Variable \textit{j} oder Objekt \textit{g*}} & \\ 
+	& & 0 & 1 & $\sum$ \\ \hline
+	\multirow{2}{*}{Variable \textit{i} oder Objekt \textit{g}} & 0 (Nichtbesitz) & a & b & a + b \\
+	& 1 (Besitz) & c & d & c + d \\ \hline
+	& $\sum$ & a + c & b + d & a + b + c + d = m \\ 
+\end{tabular}
+\bigskip
+Die Variablen a, b, c und d geben Auskunft über Übereinstimmungen (a und d) und Nichtübereinstimmungen (b und c).
 
 Ausgehend von \cite{Bacher.2010}, S. 199
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
-lassen sich durch die unterschiedliche Gewichtung von $\alpha$, $\beta$, $\gamma$ und $\delta$  verschiedene Ähnlichkeitsmaße herleiten.
+lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$  verschiedene Ähnlichkeitsmaße herleiten.
 
 \section{Proximitätsmaße für polytome Merkmale}
 Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 159). Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden (Vgl. Eckey et al. \cite{Eckey.2002}, S. 225).
