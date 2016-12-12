@@ -31,13 +31,26 @@ Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenp
 \end{tabular}
 \bigskip
 \\
-Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen und die Variablen \textit{b} und \textit{c} über Nichtübereinstimmungen.
+Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen. Die Variable \textit{a} gibt dabei Auskunft zur Übereinstimmung des Nichtbesitzes, dass bedeutet beide betrachteten Objekte besitzen das untersuchte Merkmal nicht. Die Variable \textit{d} gibt Auskunft zur Übereinstimmung des Besitzes, dass bedeutet beide betrachteten Objekte besitzen das untersuchte Merkmal. Die Variablen \textit{b} und \textit{c} geben Auskunft zur Nichtübereinstimmungen, dass heißt nur eines der Objekte besitzt das untersuchte Merkmal.
 
 \colorbox{red}{überarbeiten}Ausgehend von \cite{Bacher.2010}, S. 199
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
-lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$  verschiedene Ähnlichkeitsmaße herleiten.
+lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$  verschiedene Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Ähnlichkeitsmaße sind nach dem jeweiligen Entwickler bennant.
+Nachfolgend sind einige Ähnlichkeitsmaße, nach Bacher \cite{Bacher.2010}, S. 200, mitsamt ihrer Formel dargestellt.
+\begin{tabular}{l|l|l}
+	\hline
+	Ähnlichkeitsmaß & Berechnungsformel & Eigenschaften \\ \hline
+	Jaccard I & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein \\ \hline
+	Dice & \frac{0 \cdot \textit{a} + 2 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, gemeinsamer Besitz doppelt \\ \hline
+	Sokal \& Sneath I & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, Nichtübereinstimmung doppelt \\ \hline
+	Russel \& Rao & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz wird nicht als Ähnlichkeit betrachtet, geht aber in den Nenner ein \\ \hline
+	Simple-Matching & \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Alles wird gleich gewichtet \\ \hline
+	Sokal \& Sneath II & \frac{2 \cdot (\textit{a} + \textit{d})}{2 \cdot (\textit{a} + \textit{d}) + 1 \cdot (\textit{b} + \textit{c})} & Übereinstimmungen werden doppelt gewichtet \\ \hline
+	Rogers \& Tanimoto & \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot a + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} & Nichtübereinstimmung wird doppelt gewichtet \\ \hline
+\end{tabular}
+	
 
 \section{Proximitätsmaße für polytome Merkmale}
 Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 159). Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden (Vgl. Eckey et al. \cite{Eckey.2002}, S. 225).
