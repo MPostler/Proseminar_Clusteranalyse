@@ -1,6 +1,6 @@
 \chapter{Proximitätsmaße}
 
-Um die Einteilung in möglichst homogene Gruppen vornehmen zu können, müssen die zu untersuchenden Objekte bezüglich ihrer zu beobachtenden Eigenschaften auf Ähnlichkeit untersucht werden. 
+Um die Einteilung in möglichst homogene Gruppen vornehmen zu können, müssen die zu untersuchenden Objekte bezüglich ihrer zu beobachtenden Eigenschaften auf Ähnlichkeit untersucht werden. Die Wahl eines Proximitätsmaß für eine Clusteranalyse hängt maßgeblich davon ab, ob die Clusteranalyse Objekte oder Variablen zu klassifizieren versucht (Vgl. Bacher et al. \cite{Bacher.2010}, S. 196).
 
 Nach Backhaus et al \cite{Backhaus.2016} lassen sich zwei Arten von Proximitätsmaßen unterscheiden:
 
@@ -9,41 +9,18 @@ Nach Backhaus et al \cite{Backhaus.2016} lassen sich zwei Arten von Proximitäts
 	\item \textit{Distanzmaße} (auch \textit{Unähnlichkeitsmaße}): Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind. Die Distanzmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht. (Eckey et al. \cite{Eckey.2002}, S. 205).
 \end{enumerate}
 
-Die Wahl eines Proximitätsmaß für eine Clusteranalyse hängt laut maßgeblich davon ab, ob die Clusteranalyse Objekte oder Variablen zu klassifizieren versucht (Vgl. Bacher et al. \cite{Bacher.2010}, S. 196) Welche Eigenschaft? -> Welches Maß
-
-Übersicht generieren: 
-
-\begin{tabular}{|l|l|}
-	 \hline
-	 Dichotome Variablen & City-Block-Metrik \\
-	 & Quadrierte Euklidische Distanz \\
-	 & Produkt-Moment-Korrelationskoeffizient \\ \hline
-	 Nominale Variablen & Dummybildung sonst wie Dichotome Variablen \\ \hline
-	 Ordinale Variablen & City-Block Metrik \\ 
-	 & Canberra-Metrik \\
-	 & JACCARD-II-Koeffizient \\
-	 & verallgemeinerter Simple-Matching-Koeffizient für ordinale Variablen \\
-	 & Übereinstimmungskoeffizient für ordinale Variablen \\ \hline
-	 Quantitative Variablen & Produkt-Moment-Korellation \\
-	 & City-Block-Metrik \\
-	 & euklidische Distanz \\
-	 & quadrierte euklidische Distanz \\
-	 & Chebychev-Distanz \\ \hline
-\end{tabular}
-
-
-\cite{Bacher.2010} S. 200 Alle Ähnlichkeitsmaße a lassen sich durch 
+\cite{Bacher.2010} S. 200 Alle Ähnlichkeitsmaße \textit{ä} lassen sich durch 
 \begin{equation}
 u_{ij} = 1 - \ddot{a}_{ij} \quad \text{bzw.} \quad u_{g,g*} = 1- \ddot{a}_{g,g*}
 \end{equation}
-in Distanzmaße u umwandeln.
+in Distanzmaße \textit{u} umwandeln.
 
 Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
 
 \section{Proximitätsmaße für dichotome Merkmale}
 Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen. (Vgl. Eckey et al. \cite{Eckey.2002}, S. 218). 
 
-Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenpaar zu definieren, kommt oft eine Vierfeldertafel zum Einsatz: \\
+Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenpaar zu definieren, kommt oft eine Kontingenztabelle (auch \textit{Vierfeldertafel}) zum Einsatz: \\
 
 \begin{tabular}{cc|cc|c}
 	& & \multicolumn{2}{c|}{Variable \textit{j} oder Objekt \textit{g*}} & \\ 
@@ -53,9 +30,10 @@ Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenp
 	& $\sum$ & a + c & b + d & a + b + c + d = m \\ 
 \end{tabular}
 \bigskip
-Die Variablen a, b, c und d geben Auskunft über Übereinstimmungen (a und d) und Nichtübereinstimmungen (b und c).
+\\
+Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen und die Variablen \textit{b} und \textit{c} über Nichtübereinstimmungen.
 
-Ausgehend von \cite{Bacher.2010}, S. 199
+\colorbox{red}{überarbeiten}Ausgehend von \cite{Bacher.2010}, S. 199
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
@@ -65,4 +43,9 @@ lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $
 Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 159). Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden (Vgl. Eckey et al. \cite{Eckey.2002}, S. 225).
 
 \section{Proximitätsmaße für hierarchische Merkmale}
+
+Bei hierarchischen Merkmalen wird von den einzelnen Hierarchieebenen ausgegangen. Ihnen wird ein Wert zugewiesen und ausgehend vom Zusammentreffen der untergeordneten Merkmalsausprägungen auf einer Hierarchieebene wird ihnen die Distanz der Hierarchieebene zugewiesen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 160).
+
 \section{Proximitätsmaße für quantitative Merkmale}
+
+
