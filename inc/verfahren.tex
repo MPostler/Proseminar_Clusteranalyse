@@ -29,31 +29,44 @@ Dieses Verfahren ist ein dilatierendes Verfahren. Es eignet sich im Gegensatz zu
 Das Average Linkage-Verfahren ist eine Modifikation vom Single und Complete Linkage-Verfahren. Dadurch wird versucht die Vorteile der beiden Verfahren zu kombinieren und die Nachteile zu eliminieren. Die Distanz berechnet sich dabei auf Grundlage einer Durchschnittsbildung von den Distanzen der vereinten Objekten.
 Nach Bacher et al. \cite{Bacher.2010}, S.264 lässt sich der Mittelwert mithilfe von drei verschiedenen Verfahren berechnen:
 \begin{enumerate}
-	\item Average-Linkage, dabei findet eine einfache Durchschnittsbildung statt.
+	\item Average-Linkage
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i} + u_{q,i}}{2}
 	\end{equation}
+	Hier findet eine einfache Durchschnittsbildung statt. Everitt et al. (\cite{Everitt.2011}, S. 79) beschreiben dieses Verfahren als relativ robust und dazu geneigt, Cluster mit geringen Varianzen zu fusionieren.
 	\item Weighted-Average-Linkage
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i}n_{p} + u_{q,i}n_{q}}{n_{p} + n_{q}}
 	\end{equation}
-	\item Within-Average-Linkage \colorbox{red}{selbe Formel wie Weighted-Average-Linkage? -> ja, weil sie sich nur minimal unterscheiden (zweite Formel S. 265 + Erklärung darunter. Deshalb Vorschlag: Wir nehmen hier nicht schon wieder Bacher, sondern verwenden eine andere gute Quelle (könnte ich morgen machen), bleiben aber in der gleichen Notation wie Bacher, um Missverständnisse zu vermeiden)}
+	Hier werden Merkmalsausprägungen in kleinen Clustern höher gewichtet als Merkmalsausprägungen in großen Clustern (Vgl. Everitt et al. \cite{Everitt.2011}, S.79)
+	\item Within-Average-Linkage \colorbox{red}{selbe Formel wie Weighted-Average-Linkage? -> ja, weil sie sich nur minimal unterscheiden (zweite Formel S. 265 + Erklärung darunter. Deshalb Vorschlag: Wir nehmen hier nicht schon wieder Bacher, sondern verwenden eine andere gute Quelle ohne Within(könnte ich morgen machen), bleiben aber in der gleichen Notation wie Bacher, um Missverständnisse zu vermeiden)}
 \end{enumerate}
 Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern q und i.
 Dieses Verfahren ist ein konservatives Verfahren. (Vgl. Bacher \cite{Bacher.2010}, S.264-266)  
 
 \section{Centroid-Verfahren}
-Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentaten für den jeweiligen Cluster dienen. Dabei werden jewils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren. (Vgl. Bacher et al. \cite{Bacher.2010},S. 285-289) 
+Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentaten für den jeweiligen Cluster dienen. Dabei werden jewils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren. (Vgl. Bacher et al. \cite{Bacher.2010},S. 285-289) Nach Everitt et al. (\cite{Everitt.2011}, S. 79) dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen Beiden.
+\colorbox{red}{Reminder: Hier kommt auch das Problem mit den Umkehrungen}
 
 \section{Median-Verfahren}
 Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative Daten zur Berechnung. Ebenso werden die Clusterpaare zusammengefasst, deren euklidische Distanz zu dem Clusterzentrum minimal ist. Nach dem Zusammenfassen der Clusterpaare wird das neue Clusterzentrum errechnet. Dafür wird der Median aus den zwei alten Clusterzentren gebildet. Dies geschieht nach Bacher \cite{Bacher.2010} nach folgender Formel:
 \begin{equation}
 	x_{(p+q),j} = \frac{x_{pj} + x_{qj}}{2}
 \end{equation}
-Hier ist ebenso die ständige Neuberechnung der Clusterzentren nicht notwendig, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Dabei ist das Verschmelzungsschema ähnlich wie bei dem Average Linkage-Verfahren schwer zu interpretieren (Vgl. Bacher et al. \cite{Bacher.2010}, S. 285.289).
+Hier ist ebenso die ständige Neuberechnung der Clusterzentren nicht notwendig, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Dabei ist das Verschmelzungsschema ähnlich wie bei dem Average Linkage-Verfahren schwer zu interpretieren (Vgl. Bacher et al. \cite{Bacher.2010}, S. 285.289). Neu entstehende Cluster liegen in der Mitte der beiden ursprünglichen Cluster. \cite{Everitt.2011} S. 79
 
 \section{Ward-Verfahren}
-Das Ward-Verfahren wird oft als sehr guter Clusteralgorithmus gesehen, da es im Vergleich zu anderen Verfahren sehr gute Partitionen findet und Objekte "richtig" den Clustern zuordnet. Dazu müssen jedoch folgende Bedingungen gegeben sein: Verwendung eines Distanzmaßes, alle Variablen metrisches Skalenniveau, keine Ausreißer vor Anwendung des Verfahrens, Variablen sind unkorelliert, Elementanzahl in jeder Gruppe ca. gleich groß )(zu erwarten),Cluster besitzen gleiche Ausdehnung. Dabei werden jeweils die Objekte zusammengefasst ,welche die Streuung innerhalb eines Cluster möglichst wenig erhöhen. Die Cluster werden also so gebildet, dass sie möglichst homogen sind. (Vgl. Backhaus et al. \cite{Backhaus.2016} S.484) 
+Das Ward-Verfahren wird oft als sehr guter Clusteralgorithmus gesehen, da es im Vergleich zu anderen Verfahren sehr gute Partitionen findet und Objekte "richtig" den Clustern zuordnet. Dazu müssen jedoch folgende Bedingungen gegeben sein, da dieses Verfahren sehr sensibel reagiert: 
+
+\begin{itemize}
+	\item Verwendung eines Distanzmaßes
+	\item alle Variablen müssen metrisches Skalenniveau \item Ausreißer müssen vor Anwendung des Verfahrens eliminiert werden
+	\item Variablen sind unkorelliert
+	\item Elementanzahl in jeder Gruppe ca. gleich groß )
+	\item Cluster besitzen gleiche Ausdehnung
+\end{itemize}
+
+Dabei werden jeweils die Objekte zusammengefasst, welche die Streuung innerhalb eines Cluster möglichst wenig erhöhen. Die Cluster werden also so gebildet, dass sie möglichst homogen sind (Vgl. Backhaus et al. \cite{Backhaus.2016} S.484).
 
 Ward neigt jedoch dazu, möglichst gleich große Cluster zu bilden und langgestreckte Cluster bzw. kleine Cluster mit wenigen Objekten nicht zu erkennen \cite{Backhaus.2016} S. 489, auch Grafik
 
