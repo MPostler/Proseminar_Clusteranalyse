@@ -45,8 +45,10 @@ Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_
 Dieses Verfahren ist ein konservatives Verfahren. (Vgl. Bacher \cite{Bacher.2010}, S.264-266)  
 
 \section{Centroid-Verfahren}
-Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentaten für den jeweiligen Cluster dienen. Dabei werden jewils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren. (Vgl. Bacher et al. \cite{Bacher.2010},S. 285-289) Nach Everitt et al. (\cite{Everitt.2011}, S. 79) dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen Beiden.
-\colorbox{red}{Reminder: Hier kommt auch das Problem mit den Umkehrungen}
+Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentaten für den jeweiligen Cluster dienen. Dabei werden jewils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren. (Vgl. Bacher et al. \cite{Bacher.2010},S. 285-289) Nach Everitt et al. (\cite{Everitt.2011}, S. 79) dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen beiden.
+Eckey et al. (\cite{Eckey.2002}, S. 243) weisen auf das Problem hin, dass die Bildung eher heterogener Cluster nicht auszuschließen ist, sofern die Clusterzentren nur nahe genug beieinander liegen.
+
+\colorbox{red}{Reminder: Hier kommt auch das Problem mit den Umkehrungen/Inversionen für Centroid, Median, Ward}
 
 \section{Median-Verfahren}
 Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative Daten zur Berechnung. Ebenso werden die Clusterpaare zusammengefasst, deren euklidische Distanz zu dem Clusterzentrum minimal ist. Nach dem Zusammenfassen der Clusterpaare wird das neue Clusterzentrum errechnet. Dafür wird der Median aus den zwei alten Clusterzentren gebildet. Dies geschieht nach Bacher \cite{Bacher.2010} nach folgender Formel:
@@ -54,25 +56,26 @@ Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative 
 	x_{(p+q),j} = \frac{x_{pj} + x_{qj}}{2}
 \end{equation}
 Hier ist ebenso die ständige Neuberechnung der Clusterzentren nicht notwendig, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Dabei ist das Verschmelzungsschema ähnlich wie bei dem Average Linkage-Verfahren schwer zu interpretieren (Vgl. Bacher et al. \cite{Bacher.2010}, S. 285.289). Neu entstehende Cluster liegen in der Mitte der beiden ursprünglichen Cluster. \cite{Everitt.2011} S. 79
+Im Gegensatz zum Centroid-Verfahren berücksichtigt das Median-Verfahren die Besetzungszahlen der beiden Cluster bei der Fusion nicht. Bei gleicher Objektanzahl können beide Verfahren allerdings als identisch angesehen werden (Vgl. Eckey et al. \cite{Eckey.2002}, S. 242).
 
 \section{Ward-Verfahren}
 Das Ward-Verfahren wird oft als sehr guter Clusteralgorithmus gesehen, da es im Vergleich zu anderen Verfahren sehr gute Partitionen findet und Objekte "richtig" den Clustern zuordnet. Dazu müssen jedoch folgende Bedingungen gegeben sein, da dieses Verfahren sehr sensibel reagiert: 
 
 \begin{itemize}
-	\item Verwendung eines Distanzmaßes
+	\item Verwendung eines geeigneten Distanzmaßes
 	\item alle Variablen müssen metrisches Skalenniveau \item Ausreißer müssen vor Anwendung des Verfahrens eliminiert werden
-	\item Variablen sind unkorelliert
-	\item Elementanzahl in jeder Gruppe ca. gleich groß )
-	\item Cluster besitzen gleiche Ausdehnung
+	\item alle Variablen müssen unkorreliert sein
+	\item die Elementanzahl sollte in jeder Gruppe als in etwa gleich groß erwartet werden
+	\item die einzelnen Cluster müssen die gleiche Ausdehnung besitzen
 \end{itemize}
 
-Dabei werden jeweils die Objekte zusammengefasst, welche die Streuung innerhalb eines Cluster möglichst wenig erhöhen. Die Cluster werden also so gebildet, dass sie möglichst homogen sind (Vgl. Backhaus et al. \cite{Backhaus.2016} S.484).
+Im Verfahren werden jeweils die Objekte zusammengefasst, welche die Streuung innerhalb eines Cluster möglichst wenig erhöhen. Die Cluster werden also so gebildet, dass sie möglichst homogen sind (Vgl. Backhaus et al. \cite{Backhaus.2016} S.484). \\
+Ward neigt jedoch dazu, möglichst gleich große Cluster zu bilden und langgestreckte Cluster bzw. kleine Cluster mit wenigen Objekten nicht zu erkennen \cite{Backhaus.2016} S. 489, auch Grafik\\
 
-Ward neigt jedoch dazu, möglichst gleich große Cluster zu bilden und langgestreckte Cluster bzw. kleine Cluster mit wenigen Objekten nicht zu erkennen \cite{Backhaus.2016} S. 489, auch Grafik
 
 Abbildung kann rein, Fusionierungseigenschaften vielleicht unter 2.Clusterlösungen erklären?
 
-
+Idee: Inversionen ja/nein einfügen \\
 \begin{tabular}{|l|l|l|l|p{3.7cm}|}
 	\hline
 	\rowcolor{babyblueeyes}Verfahren & Eigenschaft & Monoton? & Proximitätsmaße & Bemerkungen \\ \hline
