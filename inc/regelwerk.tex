@@ -1,3 +1,18 @@
 \chapter{Regelwerk}
 
 Aufbauend auf den vorherigen zwei Kapiteln soll hier ein festes Regelwerk in Form eines Entscheidungsbaumes entstehen, das die Vorgehensweise bei unterschiedlichen Datenstrukturen und Anforderungsszenarien aufzeigt und dem Anwender die Auswahl für ein geeignetes Verfahren erleichtert.
+
+Nach Backhaus \cite{Backhaus.2016}, S. 510 muss man einige Vorüberlegungen anstellen um das ideale Clusterverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
+\begin{enumerate}
+    \item Anzahl der Objekte
+    \item Problem der Ausreißer
+    \item Anzahl der betrachteten Merkmale
+    \item Gewichtung der Merkmale
+    \item Vergleichbarkeit der Merkmale
+\end{enumerate}
+
+
+
+Bei dem Single Linkage-Verfahren hat man keine Probleme mit Ausreißern, da man dieses Verfahren zum Teil sogar nutzt um Außreißer zu identifizieren. Bei dem Complete Linkage-Verfahren kann man nur schlecht Ausreißer erkennen, das Verfahren ist aber auch mit Ausreißern in den Daten durchführbar. Bei dem Ward-Verfahren muss man vor der Ausführung die Ausreißer elimienieren um ordentliche Ergebnisse zu erhalten.
+
+\colorbox{red}{Vielleicht lieber andere Kriterien als bei Backhaus?? (z.B. Proximitätsmaß, Ausreißer, Gruppengröße)}
