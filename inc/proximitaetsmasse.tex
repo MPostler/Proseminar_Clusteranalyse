@@ -37,18 +37,21 @@ Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen.
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
-lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$  verschiedene Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Ähnlichkeitsmaße sind nach dem jeweiligen Entwickler bennant.
-Nachfolgend sind einige Ähnlichkeitsmaße, nach Bacher \cite{Bacher.2010}, S. 200, mitsamt ihrer Formel dargestellt.
-\begin{tabular}{l|l|l}
+
+lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$ verschiedene Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Ähnlichkeitsmaße sind nach dem jeweiligen Entwickler benannt.
+Nachfolgend sind einige Ähnlichkeitsmaße, nach Bacher \cite{Bacher.2010}, S. 200, mitsamt ihrer Formel dargestellt. \\ 
+\\
+%\begin{tabular}{|l*{1}{|m{3.5cm}}|c*{1}{|m{3.5cm}}|p{10cm}|}
+\begin{tabular}{|l|c|p{8cm}|}
 	\hline
-	Ähnlichkeitsmaß & Berechnungsformel & Eigenschaften \\ \hline
-	Jaccard I & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein \\ \hline
-	Dice & \frac{0 \cdot \textit{a} + 2 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, gemeinsamer Besitz doppelt \\ \hline
-	Sokal \& Sneath I & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, Nichtübereinstimmung doppelt \\ \hline
-	Russel \& Rao & \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Gemeinsamer Nichtbesitz wird nicht als Ähnlichkeit betrachtet, geht aber in den Nenner ein \\ \hline
-	Simple-Matching & \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} & Alles wird gleich gewichtet \\ \hline
-	Sokal \& Sneath II & \frac{2 \cdot (\textit{a} + \textit{d})}{2 \cdot (\textit{a} + \textit{d}) + 1 \cdot (\textit{b} + \textit{c})} & Übereinstimmungen werden doppelt gewichtet \\ \hline
-	Rogers \& Tanimoto & \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot a + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} & Nichtübereinstimmung wird doppelt gewichtet \\ \hline
+	\rowcolor{babyblueeyes}Ähnlichkeitsmaß & Berechnungsformel & Eigenschaften \\ \hline
+	\rowcolor{beaublue}Jaccard I & $\frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} $ & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein \\ \hline
+	\rowcolor{beaublue}Dice & $ \frac{0 \cdot \textit{a} + 2 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} $ & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, gemeinsamer Besitz doppelt \\ \hline
+	\rowcolor{beaublue}Sokal \& Sneath I & $ \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} $ & Gemeinsamer Nichtbesitz geht nicht in Berechnung ein, Nichtübereinstimmung doppelt \\ \hline
+	\rowcolor{beaublue}Russel \& Rao & $ \frac{0 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} $ & Gemeinsamer Nichtbesitz wird nicht als Ähnlichkeit betrachtet, geht aber in den Nenner ein \\ \hline
+	\rowcolor{beaublue}Simple-Matching & $ \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot \textit{a} + 1 \cdot \textit{d} + 1 \cdot (\textit{b} + \textit{c})} $ & Alles wird gleich gewichtet \\ \hline
+	\rowcolor{beaublue}Sokal \& Sneath II & $ \frac{2 \cdot (\textit{a} + \textit{d})}{2 \cdot (\textit{a} + \textit{d}) + 1 \cdot (\textit{b} + \textit{c})} $ & Übereinstimmungen werden doppelt gewichtet \\ \hline
+	\rowcolor{beaublue}Rogers \& Tanimoto & $ \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot a + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} $ & Nichtübereinstimmung wird doppelt gewichtet \\ \hline
 \end{tabular}
 	
 
