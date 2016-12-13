@@ -63,5 +63,23 @@ Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemess
 Bei hierarchischen Merkmalen wird von den einzelnen Hierarchieebenen ausgegangen. Ihnen wird ein Wert zugewiesen und ausgehend vom Zusammentreffen der untergeordneten Merkmalsausprägungen auf einer Hierarchieebene wird ihnen die Distanz der Hierarchieebene zugewiesen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 160).
 
 \section{Proximitätsmaße für quantitative Merkmale}
+Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten Minkowski-Metrik\footnote{In der Literatur wird oft auch \textit{q} = \textit{r} gesetzt. Hier spricht man von der gewöhnlichen Minkowski-Metrik.} ableiten (Vgl. Bacher et al. \cite{Bacher.2010}, S. 219):
 
+\begin{equation}
+d(q,r)_{g,g*} = 
+\left[	\sum_{i} |x_{gi} - x_{g*i}|^r	\right]^\frac{1}{q}
+\end{equation}
+
+Anhand der Parameter lassen sich verschiedene Distanzmaße unterscheiden: 
+\begin{center}
+\begin{tabular}{lcll}
+	\textit{r} = 1 & und & \textit{q} = 1 & für die City-Block-Distanz \\
+	\textit{r} = 2 & und & \textit{q} = 2 & für die euklidische Distanz \\
+	\textit{r} = 2 & und & \textit{q} = 1 & für die quadrierte euklidische Distanz \\
+	\textit{r} = $\infty$ & und & \textit{q} = $\infty$ & für die Chebychev-Distanz \\
+\end{tabular}
+\end{center}
+\cite{Bacher.2010} S. 219
+
+Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen (Vgl. Eckey \cite{Eckey.2002}, S. 212).
 
