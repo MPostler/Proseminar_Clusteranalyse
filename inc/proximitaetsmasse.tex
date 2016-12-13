@@ -70,7 +70,7 @@ d(q,r)_{g,g*} =
 \left[	\sum_{i} |x_{gi} - x_{g*i}|^r	\right]^\frac{1}{q}
 \end{equation}
 
-Anhand der Parameter lassen sich verschiedene Distanzmaße unterscheiden: 
+Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmale unterscheiden: 
 \begin{center}
 \begin{tabular}{lcll}
 	\textit{r} = 1 & und & \textit{q} = 1 & für die City-Block-Distanz \\
@@ -81,5 +81,11 @@ Anhand der Parameter lassen sich verschiedene Distanzmaße unterscheiden:
 \end{center}
 \cite{Bacher.2010} S. 219
 
-Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen (Vgl. Eckey \cite{Eckey.2002}, S. 212).
+Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen (Vgl. Eckey \cite{Eckey.2002}, S. 212). Die Verwendung des Namens $L_p$-Distanzen ist durchaus üblich. Die Unterscheidung erfolgt hierbei durch den Parameter \textit{p} mit \textit{p} = \textit{q} = \textit{r}, wodurch die quadrierte euklidische Distanz für gewöhnlich nicht zu den $L_p$-Distanzen gezählt wird. \\
 
+Des weiteren spielt im Falle von hoch korrelierten Merkmalen die Malahanobis-Distanz eine wichtige Rolle, da sie Korrelationen und Varianzen zwischen den Variablen beseitigt:
+
+\begin{equation}
+MAHA(x_{g},x_{g*}) = (x_{g} - x_{g*}) \cdot S^{-1} \cdot (x_{g} - x_{g*})
+\end{equation}
+mit $x_{g}$ und $x_{g*}$ als Merkmalsvektoren der Objekte \textit{g} bzw. \textit{g*}. $S^{-1}$ bezeichnet die Inverse der zugrundeliegenden Kovarianzmatrix (Vgl. Bacher et al \cite{Bacher.2010}, S. 339 und Bankhofer/Vogel \cite{Bankhofer.2008}, S. 168).
