@@ -21,7 +21,7 @@
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-
+\usepackage[round]{natbib} 
 
 \usepackage{algorithm}
 \usepackage{algorithmic}
@@ -60,6 +60,10 @@
 \input{inc/title}
 \pagenumbering{roman}
 \tableofcontents
+
+% Abbildungsverzeichnis
+\newpage
+\listoffigures
 \newpage
 
 \pagenumbering{arabic}
@@ -75,12 +79,8 @@
 
 % Literaturverzeichnis
 \newpage
-\bibliographystyle{alpha}
+\bibliographystyle{apalike}
 \bibliography{bibs/literatur}
-
-% Abbildungsverzeichnis
-\newpage
-\listoffigures
 
 \end{document}
 
