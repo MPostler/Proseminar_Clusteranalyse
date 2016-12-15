@@ -5,24 +5,24 @@ Eine Clusteranalyse oder auch Klassifizierung dient dazu, Objekte und/oder Merkm
 Nach \citet[S. 476]{Backhaus.2016} lassen sich vier übergeordnete Gruppierungen von Clusteranalyseverfahren darstellen. Abbildung \ref{pic:backhaus476} gibt hierzu nochmal einen Überblick.
 
 \begin{enumerate}
-	\item Partitionierende Verfahren: Diese Algorithmen benötigen eine vorgegebene Clusteranzahl, in die sie die Objekte einzuordnen versuchen. Unterschiede zwischen den einzelnen Verfahren entstehen hierbei vor allem durch die unterschiedliche Messung der Verbesserung der Clusterbildung und in der Regelung des Austauschs der Objekte zwischen den Clustern.
-	\item Hierarchische Verfahren: Im Gegensatz zu partitionierenden Verfahren benötigen diese Algorithmen keine vorgegebene Clusteranzahl, sondern iterieren alle möglichen Clusteranzahlen durch. Hierarchisch divisive Verfahren gehen dabei von der größtmöglichen Partition aus, die sie Schritt für Schritt in die kleinstmöglichen Partitionen zerlegen (ein Objekt in einer Partition). Hierarchisch agglomerative Verfahren dagegen fassen die feinsten Partitionen zu immer größeren Gruppen zusammen, bis schließlich die größtmögliche Partition erreicht ist, die alle Objekte enthält. Abbildung \ref{pic:xu21} zeigt diesen Unterschied deutlich.
+	\item \textit{Partitionierende Verfahren}: Diese Algorithmen benötigen eine vorgegebene Clusteranzahl, in die sie die Objekte einzuordnen versuchen. Unterschiede zwischen den einzelnen Verfahren entstehen hierbei vor allem durch die unterschiedliche Messung der Verbesserung der Clusterbildung und in der Regelung des Austauschs der Objekte zwischen den Clustern, weswegen man diese Clusteranalyseverfahren auch in Austauschverfahren und iterierte Minimaldistanzverfahren unterscheiden kann.
+	\item \textit{Hierarchische Verfahren}: Im Gegensatz zu partitionierenden Verfahren benötigen diese Algorithmen keine vorgegebene Clusteranzahl, sondern iterieren alle möglichen Clusteranzahlen durch. Hierarchisch divisive Verfahren gehen dabei von der größtmöglichen Partition aus, die sie Schritt für Schritt in die kleinstmöglichen Partitionen zerlegen (ein Objekt in einer Partition). Hierarchisch agglomerative Verfahren dagegen fassen die feinsten Partitionen zu immer größeren Gruppen zusammen, bis schließlich die größtmögliche Partition erreicht ist, die alle Objekte enthält. Abbildung \ref{pic:xu21} zeigt diesen Unterschied deutlich.
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=8cm]{pics/xu21.png}
 		\end{center}
-		\caption{Vergleich der agglomerativen und divisiven Strategien nach Xu}
+		\caption{Vergleich der agglomerativen und divisiven Strategien nach \citet[S. 21]{Xu.1999}}
 		\label{pic:xu21}
 	\end{figure}
-	\item Graphentheoretische Verfahren
-	\item Optimierungsverfahren
+	\item \textit{Graphentheoretische Verfahren}
+	\item \textit{Optimierungsverfahren}
 \end{enumerate}
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=14cm]{pics/backhaus476.png}
 	\end{center}
-	\caption{Gruppierungen nach Backhaus}
+	\caption{Gruppierungen nach \citet[S. 476]{Backhaus.2016}}
 	\label{pic:backhaus476}
 \end{figure}
 
@@ -34,16 +34,14 @@ Nach \citet[S. 476]{Backhaus.2016} lassen sich vier übergeordnete Gruppierungen
 	\item Probabilistische Clusteranalyseverfahren: Fuzzy, Klassifikationsobjekte werden verschiedenen Clustern mit einer Wahrscheinlichkeit zwischen 0 und 1 zugeordnet, Verallgemeinerung der Deterministischen Clusteranalyseverfahren (Annahme, dass w = 0 oder 1 wird fallen gelassen)
 \end{enumerate}
 
-\citet[S. 21]{Bacher.2010} unterscheiden die Verfahren weiterhin auch aufgrund ihres zugrundeliegenden Wahrscheinlichkeitsmodells. Abbildung \ref{pic:bac20} beschreibt, welche Modelle welche Modelle zu welcher Zuordnung
+\citet[S. 21]{Bacher.2010} unterscheiden die Verfahren weiterhin auch aufgrund ihres zugrundeliegenden Wahrscheinlichkeitsmodells. Abbildung \ref{pic:bac20} zeigt auf, welcher Zuordnung welches Wahrscheinlichkeitsmodell zugrunde liegt.
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=10cm]{pics/bac20.png}
 	\end{center}
-	\caption{Wahrscheinlichkeitsmodelle nach Bacher et al.}
+	\caption{Wahrscheinlichkeitsmodelle nach \citet[S. 20]{Bacher.2010}}
 	\label{pic:bac20}
 \end{figure}
-
-Die partitionierenden Verfahren lassen sich wiederum in Austauschverfahren und iterierte Minimaldistanzverfahren unterscheiden.
 
 \citet{Xu.1999} erwähnt weiterhin noch Single Scan Clustering, den BIRCH-Algorithmus, den STING-Algorithmus und Grid Clustering. Diese speziellen Algorithmen dienen der Klassifizierung bei räumlichen Datenbanken (Spatial Databases).

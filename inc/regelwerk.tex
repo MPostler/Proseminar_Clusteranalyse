@@ -2,7 +2,7 @@
 
 Aufbauend auf den vorherigen zwei Kapiteln soll hier ein festes Regelwerk in Form eines Entscheidungsbaumes entstehen, das die Vorgehensweise bei unterschiedlichen Datenstrukturen und Anforderungsszenarien aufzeigt und dem Anwender die Auswahl für ein geeignetes Verfahren erleichtert.
 
-Nach \citet[S. 510]{Backhaus.2016} muss man einige Vorüberlegungen anstellen um das ideale Clusterverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
+Nach \citet[S. 510]{Backhaus.2016} müssen einige Vorüberlegungen vorab gestellt werden, um das ideale Clusteranalyseverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
 \begin{enumerate}
     \item Anzahl der Objekte
     \item Problem der Ausreißer
@@ -11,14 +11,12 @@ Nach \citet[S. 510]{Backhaus.2016} muss man einige Vorüberlegungen anstellen um
     \item Vergleichbarkeit der Merkmale
 \end{enumerate}
 
-
-
-Bei dem Single Linkage-Verfahren hat man keine Probleme mit Ausreißern, da man dieses Verfahren zum Teil sogar nutzt um Außreißer zu identifizieren. Bei dem Complete Linkage-Verfahren kann man nur schlecht Ausreißer erkennen, das Verfahren ist aber auch mit Ausreißern in den Daten durchführbar. Bei dem Ward-Verfahren muss man vor der Ausführung die Ausreißer elimienieren um ordentliche Ergebnisse zu erhalten.
+Das Single Linkage-Verfahren erweist sich gegenüber Ausreißern als sehr robust. Aufgrund seiner Eigenschaften wird es sogar benutzt, um Außreißer zu identifizieren. Bei dem Complete Linkage-Verfahren lassen sich nur schlecht Ausreißer erkennen; das Verfahren ist aber auch mit Ausreißern in den Daten durchführbar. Beim Ward-Verfahren muss man vor der Ausführung die Ausreißer eliminieren, um fachlich gute Ergebnisse zu erhalten.
 
 \colorbox{red}{Vielleicht lieber andere Kriterien als bei Backhaus?? (z.B. Proximitätsmaß, Ausreißer, Gruppengröße) -> Können wir gerne noch ergänzen. Bisher haben wir viel dafür direkt bei den einzelnen Verfahren stehen. Dort rausnehmen und hier ergänzen?eher dort stehen lassen}
 
-Das Single Linkage-Verfahren sollte man wählen, wenn die Homogenität wichtiger ist als die Heterogenität und wenn eher wenige, dafür größere Cluster erzeugt werden sollen. Zudem sollte es genutzt werden um Ausreißer zu identifizieren. Allerdings muss man die Tendenz zur Kettenbildung beachten.
+Das Single Linkage-Verfahren sollte gewählt werden, wenn die Homogenität wichtiger ist als die Heterogenität und wenn eher wenige, dafür größere Cluster erzeugt werden sollen. Zudem sollte es genutzt werden, um Ausreißer zu identifizieren. Allerdings muss die Tendenz zur Kettenbildung beachtet werden.
 
-Das Complete Linkage-Verfahren sollte man wählen, wenn die Heterogenität wichtiger als die Homogenität ist und wenn eher mehrere, kleinere Cluster erzeugt werden sollen. Dieses Verfahren eignet sich nicht um Ausreißer zu identifizieren.
+Das Complete Linkage-Verfahren sollte gewählt werden, wenn die Heterogenität wichtiger als die Homogenität ist und wenn eher mehrere, kleinere Cluster erzeugt werden sollen. Dieses Verfahren eignet sich nicht, um Ausreißer zu identifizieren.
 
 Das Average Linkage-Verfahren sollte genutzt werden, wenn Homogenität und Heterogenität ungefähr gleich gewichtet sind.
