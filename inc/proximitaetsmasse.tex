@@ -1,15 +1,15 @@
 \chapter{Proximitätsmaße}
 
-Um die Einteilung in möglichst homogene Gruppen vornehmen zu können, müssen die zu untersuchenden Objekte bezüglich ihrer zu beobachtenden Eigenschaften auf Ähnlichkeit untersucht werden. Die Wahl eines Proximitätsmaß für eine Clusteranalyse hängt maßgeblich davon ab, ob die Clusteranalyse Objekte oder Variablen zu klassifizieren versucht (Vgl. Bacher et al. \cite{Bacher.2010}, S. 196).
+Um die Einteilung in möglichst homogene Gruppen vornehmen zu können, müssen die zu untersuchenden Objekte bezüglich ihrer zu beobachtenden Eigenschaften auf Ähnlichkeit untersucht werden. Die Wahl eines Proximitätsmaß für eine Clusteranalyse hängt maßgeblich davon ab, ob die Clusteranalyse Objekte oder Variablen zu klassifizieren versucht \citep[Vgl.][S. 196]{Bacher.2010}.
 
-Nach Backhaus et al \cite{Backhaus.2016} lassen sich zwei Arten von Proximitätsmaßen unterscheiden:
+Nach \citet{Backhaus.2016} lassen sich zwei Arten von Proximitätsmaßen unterscheiden:
 
 \begin{enumerate}
 	\item \textit{Ähnlichkeitsmaße}: Diese Maße spiegeln die Ähnlichkeit zweier Objekte wieder. Je höher der zugewiesene Wert für zwei Objekte, desto höher ist auch ihre Ähnlichkeit.
 	\item \textit{Distanzmaße} (auch \textit{Unähnlichkeitsmaße}): Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind. Die Distanzmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht. (Eckey et al. \cite{Eckey.2002}, S. 205).
 \end{enumerate}
 
-Nach Bacher et al.\cite{Bacher.2010} S. 200 lassen sich alle Ähnlichkeitsmaße \textit{ä} durch 
+Nach \citet[S. 200]{Bacher.2010} lassen sich alle Ähnlichkeitsmaße \textit{ä} durch 
 \begin{equation}
 u_{ij} = 1 - \ddot{a}_{ij} \quad \text{bzw.} \quad u_{g,g*} = 1- \ddot{a}_{g,g*}
 \end{equation}
@@ -18,7 +18,7 @@ in Distanzmaße \textit{u} umwandeln.
 Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
 
 \section{Proximitätsmaße für dichotome Merkmale}
-Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen. (Vgl. Eckey et al. \cite{Eckey.2002}, S. 218). 
+Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen \citep[Vgl.][S. 218]{Eckey.2002}. 
 
 Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenpaar zu definieren, kommt oft eine Kontingenztabelle (auch \textit{Vierfeldertafel}) zum Einsatz: \\
 
@@ -33,13 +33,13 @@ Um die Kombinationen der Merkmalsausprägungen bei einem Objekt- bzw. Variablenp
 \\
 Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen. Die Variable \textit{a} gibt dabei Auskunft zur Übereinstimmung des Nichtbesitzes, dass bedeutet beide betrachteten Objekte besitzen das untersuchte Merkmal nicht. Die Variable \textit{d} gibt Auskunft zur Übereinstimmung des Besitzes, dass bedeutet beide betrachteten Objekte besitzen das untersuchte Merkmal. Die Variablen \textit{b} und \textit{c} geben Auskunft zur Nichtübereinstimmungen, dass heißt nur eines der Objekte besitzt das untersuchte Merkmal.
 
-Ausgehend von Bacher et al. (\cite{Bacher.2010}, S. 199)
+Ausgehend von \citet[S. 199/200]{Bacher.2010}
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
 
 lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$ verschiedene Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Maße sind nach dem jeweiligen Entwickler benannt.
-Nachfolgend sind einige Ähnlichkeitsmaße, nach Bacher et al. (\cite{Bacher.2010}, S. 200) mitsamt ihrer Berechnung dargestellt. \\ 
+Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung dargestellt. \\ 
 \\
 %\begin{tabular}{|l*{1}{|m{3.5cm}}|c*{1}{|m{3.5cm}}|p{10cm}|}
 \begin{tabular}{|l|c|p{8cm}|}
@@ -56,14 +56,14 @@ Nachfolgend sind einige Ähnlichkeitsmaße, nach Bacher et al. (\cite{Bacher.201
 	
 
 \section{Proximitätsmaße für polytome Merkmale}
-Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 159). Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden (Vgl. Eckey et al. \cite{Eckey.2002}, S. 225).
+Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen \citep[Vgl.][S. 159]{Bankhofer.2008}. Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden \citep[Vgl.][S. 225]{Eckey.2002}.
 
 \section{Proximitätsmaße für hierarchische Merkmale}
 
-Bei hierarchischen Merkmalen wird von einzelnen Hierarchieebenen ausgegangen, denen ein Wert stellvertretend für die Aggregation der Hierarchie zugewiesen wird. Ausgehend von einer Baumstruktur der verästelten hierarchischen Merkmale wird untersucht, auf welcher Hierarchieebene zwei Merkmalsausprägungen zusammentreffen. Anhand dieser Beobachtung kann ihnen dann eine spezifische Distanz zugeordnet werden (Vgl. Bankhofer/Vogel \cite{Bankhofer.2008}, S. 160).
+Bei hierarchischen Merkmalen wird von einzelnen Hierarchieebenen ausgegangen, denen ein Wert stellvertretend für die Aggregation der Hierarchie zugewiesen wird. Ausgehend von einer Baumstruktur der verästelten hierarchischen Merkmale wird untersucht, auf welcher Hierarchieebene zwei Merkmalsausprägungen zusammentreffen. Anhand dieser Beobachtung kann ihnen dann eine spezifische Distanz zugeordnet werden \citep[Vgl.][S. 160]{Bankhofer.2008}.
 
 \section{Proximitätsmaße für quantitative Merkmale}
-Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten Minkowski-Metrik\footnote{In der Literatur wird oft auch \textit{q} = \textit{r} gesetzt. Hier spricht man von der gewöhnlichen Minkowski-Metrik.} ableiten (Vgl. Bacher et al. \cite{Bacher.2010}, S. 219):
+Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten Minkowski-Metrik\footnote{In der Literatur wird oft auch \textit{q} = \textit{r} gesetzt. Hier spricht man von der gewöhnlichen Minkowski-Metrik.} ableiten \citep[Vgl.][S. 219]{Bacher.2010}:
 
 \begin{equation}
 d(q,r)_{g,g*} = 
@@ -81,11 +81,11 @@ Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmal
 \end{center}
 \cite{Bacher.2010} S. 219
 
-Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen (Vgl. Eckey \cite{Eckey.2002}, S. 212). Die Verwendung des Namens $L_p$-Distanzen ist durchaus üblich. Die Unterscheidung erfolgt hierbei durch den Parameter \textit{p} mit \textit{p} = \textit{q} = \textit{r}, wodurch die quadrierte euklidische Distanz für gewöhnlich nicht zu den $L_p$-Distanzen gezählt wird. \\
+Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen \citep[Vgl.][S. 212]{Eckey.2002}. Die Verwendung des Namens $L_p$-Distanzen ist durchaus üblich. Die Unterscheidung erfolgt hierbei durch den Parameter \textit{p} mit \textit{p} = \textit{q} = \textit{r}, wodurch die quadrierte euklidische Distanz für gewöhnlich nicht zu den $L_p$-Distanzen gezählt wird. \\
 
 Des weiteren spielt im Falle von hoch korrelierten Merkmalen die Malahanobis-Distanz eine wichtige Rolle, da sie Korrelationen und Varianzen zwischen den Variablen beseitigt:
 
 \begin{equation}
 MAHA(x_{g},x_{g*}) = (x_{g} - x_{g*}) \cdot S^{-1} \cdot (x_{g} - x_{g*})
 \end{equation}
-mit $x_{g}$ und $x_{g*}$ als Merkmalsvektoren der Objekte \textit{g} bzw. \textit{g*}. $S^{-1}$ bezeichnet die Inverse der zugrundeliegenden Kovarianzmatrix (Vgl. Bacher et al \cite{Bacher.2010}, S. 339 und Bankhofer/Vogel \cite{Bankhofer.2008}, S. 168).
+mit $x_{g}$ und $x_{g*}$ als Merkmalsvektoren der Objekte \textit{g} bzw. \textit{g*}. $S^{-1}$ bezeichnet die Inverse der zugrundeliegenden Kovarianzmatrix (Vgl. \citealt[S. 339]{Bacher.2010} und \citealt[S. 168]{Bankhofer.2008}).
