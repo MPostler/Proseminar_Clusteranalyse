@@ -20,9 +20,9 @@ Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich nun e
 \section{Proximitätsmaße für dichotome Merkmale}
 Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen \citep[Vgl.][S. 218]{Eckey.2002}. 
 
-Um die Kombinationen der Merkmalsausprägungen bei einem Variablen paar $i,j$ bzw. Objektpaar $g,g*$ zu definieren, kommt oft eine Kontingenztabelle (auch \textit{Vierfeldertafel}) zum Einsatz: \\
+Um die Kombinationen der Merkmalsausprägungen bei einem Variablenpaar $i,j$ bzw. Objektpaar $g,g*$ zu definieren, kommt oft eine Kontingenztabelle (auch \textit{Vierfeldertafel}) zum Einsatz: \\
 
-\begin{tabular}{cc|cc|c}
+\begin{tabular}{cl|cc|c}
 	& & \multicolumn{2}{c|}{Variable \textit{j} oder Objekt \textit{g*}} & \\ 
 	& & 0 & 1 & $\sum$ \\ \hline
 	\multirow{2}{*}{Variable \textit{i} oder Objekt \textit{g}} & 0 (Nichtbesitz) & a & b & a + b \\
@@ -39,9 +39,8 @@ Ausgehend von \citet[S. 199/200]{Bacher.2010}
 \end{equation}
 
 lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$ verschiedene \linebreak Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Maße sind nach dem jeweiligen Entwickler benannt und die Nummerierungszusätze werden verwendet, wenn mehrere Maße erarbeitet wurden.
-Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung dargestellt. \\ 
+Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung und typischen Eigenschaften dargestellt. \\ 
 \\
-%\begin{tabular}{|l*{1}{|m{3.5cm}}|c*{1}{|m{3.5cm}}|p{10cm}|}
 \begin{tabular}{|l|c|p{8cm}|}
 	\hline
 	\rowcolor{babyblueeyes}Ähnlichkeitsmaß & Berechnungsformel & Eigenschaften \\ \hline
@@ -60,8 +59,7 @@ Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung dargestellt.
 Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen \citep[Vgl.][S. 159]{Bankhofer.2008}. Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden \citep[Vgl.][S. 225]{Eckey.2002}.
 
 \section{Proximitätsmaße für hierarchische Merkmale}
-
-Bei hierarchischen Merkmalen wird von einzelnen Hierarchieebenen ausgegangen, denen ein Wert stellvertretend für die Aggregation der Hierarchie zugewiesen wird. Ausgehend von einer Baumstruktur der verästelten hierarchischen Merkmale wird untersucht, auf welcher Hierarchieebene zwei Merkmalsausprägungen zusammentreffen. Anhand dieser Beobachtung kann ihnen dann eine spezifische Distanz zugeordnet werden \citep[Vgl.][S. 160]{Bankhofer.2008}.
+Bei diesen Merkmalen wird von einzelnen Hierarchieebenen ausgegangen, denen ein Wert stellvertretend für die Aggregation der Hierarchie zugewiesen wird. Ausgehend von einer Baumstruktur der verästelten hierarchischen Merkmale wird untersucht, auf welcher Hierarchieebene zwei Merkmalsausprägungen zusammentreffen. Anhand dieser Beobachtung kann ihnen dann eine spezifische Distanz zugeordnet werden \citep[Vgl.][S. 160]{Bankhofer.2008}. Ein Beispiel hierfür wäre die Zugehörigkeit von zwei Studiengängen zu Fakultäten. Will man nun herausfinden, welche Distanz anhand dieser Zuordnung zwischen den beiden Studiengängen existiert, kann untersucht werden, ob die zwei Studiengänge der selben oder unterschiedlichen Fakultäten angehören. Je nach ihrem Zusammentreffen auf Fakultäts- oder erst auf Universitätsebene (sie gehören unterschiedlichen Fakultäten an) werden ihnen unterschiedliche Distanzen zugewiesen.
 
 \section{Proximitätsmaße für quantitative Merkmale}
 Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten bzw. gewöhnlichen Minkowski-Metrik ableiten \citep[Vgl.][S. 219]{Bacher.2010}:
