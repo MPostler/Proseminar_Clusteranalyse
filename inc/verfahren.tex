@@ -42,7 +42,7 @@ Nach \citet[S. 264]{Bacher.2010} lässt sich der Mittelwert mithilfe von drei ve
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i} + u_{q,i}}{2}
 	\end{equation}
-	Hier findet eine einfache Durchschnittsbildung statt. \citet[S. 79]{Everitt.2011} beschreiben dieses Verfahren als relativ robust und dazu geneigt, Cluster mit geringen Varianzen zu fusionieren.
+	Hier findet eine einfache Durchschnittsbildung statt. \citet[S. 79]{Everitt.2011} beschreibt dieses Verfahren als relativ robust und dazu geneigt, Cluster mit geringen Varianzen zu fusionieren.
 	\item Weighted-Average-Linkage
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i}n_{p} + u_{q,i}n_{q}}{n_{p} + n_{q}}
@@ -81,6 +81,8 @@ Das Ward-Verfahren wird oft als sehr guter Clusteralgorithmus gesehen, da es im 
 
 Im Verfahren werden jeweils die Objekte zusammengefasst, welche die Streuung innerhalb eines Cluster möglichst wenig erhöhen. Die Cluster werden also so gebildet, dass sie möglichst homogen sind. Ward neigt jedoch dazu, möglichst gleich große Cluster zu bilden und langgestreckte Cluster bzw. kleine Cluster mit wenigen Objekten nicht zu erkennen \citep[Vgl.][S. 484]{Backhaus.2016}. \\
 
+\section{Zusammenfassung der behandelten Verfahren}
+\citet[S. 489]{Backhaus.2016} geben einen guten Überblick über alle hier behandelten Verfahren: \\
 \begin{tabular}{|l|l|l|l|p{3.7cm}|}
 	\hline
 	\rowcolor{babyblueeyes}Verfahren & Eigenschaft & Monoton? & Proximitätsmaße & Bemerkungen \\ \hline
@@ -91,4 +93,3 @@ Im Verfahren werden jeweils die Objekte zusammengefasst, welche die Streuung inn
 	\rowcolor{beaublue}Median & konservativ & nein & Distanzmaße & \\ \hline
 	\rowcolor{beaublue}WARD & konservativ & ja & Distanzmaße & bildet etwa gleich große Gruppen \\ \hline
 \end{tabular}
-Tabelle nach Backhaus S. 489
