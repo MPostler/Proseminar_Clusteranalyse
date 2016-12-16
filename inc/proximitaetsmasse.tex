@@ -5,22 +5,19 @@ Um die Einteilung in möglichst homogene Gruppen vornehmen zu können, müssen d
 Nach \citet{Backhaus.2016} lassen sich zwei Arten von Proximitätsmaßen unterscheiden:
 
 \begin{enumerate}
-	\item \textit{Ähnlichkeitsmaße}: Diese Maße spiegeln die Ähnlichkeit zweier Objekte wieder. Je höher der zugewiesene Wert für zwei Objekte, desto höher ist auch ihre Ähnlichkeit.
-	\item \textit{Distanzmaße} (auch \textit{Unähnlichkeitsmaße}): Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind. Die Distanzmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht \citep[Vgl.][S. 205]{Eckey.2002}.
+	\item \textit{Ähnlichkeitsmaße}: Diese Maße spiegeln die Ähnlichkeit zweier Objekte wider. Je höher der zugewiesene Wert für zwei Objekte, desto höher ist auch ihre Ähnlichkeit.
+	\item \textit{Unähnlichkeitsmaße} (auch \textit{Distanzmaße}): Diese drücken die Unähnlichkeit zweier Objekte aus. Je größer die angegebene Distanz, desto unähnlicher sind die Objekte, wobei eine Distanz von Null ausdrückt, dass die zwei Objekte hinsichtlich ihrer Klassifikationsmerkmale vollkommen identisch sind.
 \end{enumerate}
-
-Nach \citet[S. 200]{Bacher.2010} lassen sich alle Ähnlichkeitsmaße \textit{ä} für zwei Variablen $i$ und $j$ bzw. zwei Objekte $g$ und $g*$ durch 
+Die Unähnlichkeitsmaße lassen sich als entgegengesetzter Pol der Ähnlichkeitsmaße auffassen, wobei diese Eigenschaft die Überführung beider Maße ineinander ermöglicht \citep[Vgl.][S. 205]{Eckey.2002}. Nach \citet[S. 200]{Bacher.2010} lassen sich alle Ähnlichkeitsmaße \textit{ä} für zwei Variablen $i$ und $j$ bzw. zwei Objekte $g$ und $g*$ durch 
 \begin{equation}
 u_{ij} = 1 - \ddot{a}_{ij} \quad \text{bzw.} \quad u_{g,g*} = 1- \ddot{a}_{g,g*}
 \end{equation}
-in Distanzmaße \textit{u} umwandeln.
-
-Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich nun eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
+in Distanzmaße \textit{u} umwandeln. Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich nun eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
 
 \section{Proximitätsmaße für dichotome Merkmale}
 Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen \citep[Vgl.][S. 218]{Eckey.2002}. 
 
-Um die Kombinationen der Merkmalsausprägungen bei einem Variablenpaar $i,j$ bzw. Objektpaar $g,g*$ zu definieren, kommt oft eine Kontingenztabelle (auch \textit{Vierfeldertafel}) zum Einsatz: \\
+Um die Kombinationen der Merkmalsausprägungen bei einem Variablenpaar $i,j$ bzw. Objektpaar $g,g*$ zu definieren, kommt oft eine Kontingenztabelle (auch Vierfeldertafel) zum Einsatz: \\
 
 \begin{tabular}{cl|cc|c}
 	& & \multicolumn{2}{c|}{Variable \textit{j} oder Objekt \textit{g*}} & \\ 
@@ -31,14 +28,13 @@ Um die Kombinationen der Merkmalsausprägungen bei einem Variablenpaar $i,j$ bzw
 \end{tabular}
 \bigskip
 \\
-Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen. Die Variable \textit{a} über die Übereinstimmung des Nichtbesitzes (beide betrachteten Objekte besitzen das untersuchte Merkmal nicht), während die Variable \textit{d} Auskunft über Übereinstimmung des Besitzes (beide betrachteten Objekte besitzen das untersuchte Merkmal). Die Variablen \textit{b} und \textit{c} geben Auskunft zur Nichtübereinstimmungen; nur eines der Objekte besitzt das untersuchte Merkmal.
+Die Variablen \textit{a} und \textit{d} geben Auskunft über Übereinstimmungen.: die Variable \textit{a} über die Übereinstimmung des Nichtbesitzes (beide betrachteten Objekte besitzen das untersuchte Merkmal nicht), während die Variable \textit{d} Auskunft über Übereinstimmung des Besitzes (beide betrachteten Objekte besitzen das untersuchte Merkmal)gibt. Die Variablen \textit{b} und \textit{c} geben Auskunft über Nichtübereinstimmungen; nur eines der Objekte besitzt das untersuchte Merkmal.
 
-Ausgehend von \citet[S. 199/200]{Bacher.2010}
 \begin{equation}
 \ddot{a}_{ij} \quad \text{bzw.} \quad \ddot{a}_{g,g*} = \frac{\alpha \cdot a + \beta \cdot d}{\delta \cdot a + \beta \cdot d + \gamma \cdot (b + c)}
 \end{equation}
 
-lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$ verschiedene \linebreak Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Maße sind nach dem jeweiligen Entwickler benannt und die Nummerierungszusätze werden verwendet, wenn mehrere Maße erarbeitet wurden.
+Ausgehend von \citet[S. 199/200]{Bacher.2010} lassen sich durch die unterschiedlichen Gewichtungsfaktoren $\alpha$, $\beta$, $\gamma$ und $\delta$ und die zuvor vorgestellten Variablen verschiedene \linebreak Ähnlichkeitsmaße herleiten. Dabei gehen je nach Ähnlichkeitsmaß manche Variablen mehr und manche weniger in die Berechnung ein. Die Maße sind nach dem jeweiligen Entwickler benannt und die Nummerierungszusätze werden verwendet, wenn mehrere Maße erarbeitet wurden.
 Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung und typischen Eigenschaften dargestellt. \\ 
 \\
 \begin{tabular}{|l|c|p{8cm}|}
@@ -52,8 +48,6 @@ Nachfolgend sind einige Ähnlichkeitsmaße mitsamt ihrer Berechnung und typische
 	\rowcolor{beaublue}Sokal \& Sneath II & $ \frac{2 \cdot (\textit{a} + \textit{d})}{2 \cdot (\textit{a} + \textit{d}) + 1 \cdot (\textit{b} + \textit{c})} $ & Übereinstimmungen werden doppelt gewichtet \\ \hline
 	\rowcolor{beaublue}Rogers \& Tanimoto & $ \frac{1 \cdot \textit{a} + 1 \cdot \textit{d}}{1 \cdot a + 1 \cdot \textit{d} + 2 \cdot (\textit{b} + \textit{c})} $ & Nichtübereinstimmung wird doppelt gewichtet \\ \hline
 \end{tabular}
-\colorbox{red}{Wo ist die Tabelle/Inhalt her?}
-	
 
 \section{Proximitätsmaße für polytome Merkmale}
 Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemessen werden und immer anhand einer Dichotomisierung durch mehrere dichotome Merkmale (sogenannte Dummy-Variablen) ersetzt werden. Ein Merkmal mit \textit{r} Merkmalsausprägungen erfordert somit \textit{r} Dummy-Variablen \citep[Vgl.][S. 159]{Bankhofer.2008}. Hierbei ist aber vor allem darauf zu achten, dass ein erheblicher Informationsverlust bei der Dichotomisierung ordinal skalierter Merkmale in Kauf genommen werden muss. In diesem Fall würde sich eher eine Distanzmessung über die Rangdistanz anbieten, die vorteilhaft anwendbar ist, sofern die Ränge als Intervallskala interpretiert werden und die meisten Merkmale sich in ihren Ausprägungen unterscheiden \citep[Vgl.][S. 225]{Eckey.2002}.
@@ -69,7 +63,7 @@ d(q,r)_{g,g*} =
 \left[	\sum_{i} |x_{gi} - x_{g*i}|^r	\right]^\frac{1}{q}
 \end{equation}
 
-Man spricht von einer gewöhnlichen Minkowski-Metrik, wenn \textit{q} = \textit{r} gesetzt wird. Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmale unterscheiden \citep[Vgl.][S. 219]{Bacher.2010}:
+Man spricht von einer gewöhnlichen Minkowski-Metrik, wenn \textit{q} = \textit{r} gesetzt wird. Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmale unterscheiden:
 \begin{center}
 \begin{tabular}{lcll}
 	\textit{r} = 1 & und & \textit{q} = 1 & für die City-Block-Distanz \\
@@ -79,7 +73,7 @@ Man spricht von einer gewöhnlichen Minkowski-Metrik, wenn \textit{q} = \textit{
 \end{tabular}
 \end{center}
 
-Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen \citep[Vgl.][S. 212]{Eckey.2002}. Die Verwendung des Namens $L_p$-Distanzen ist durchaus üblich. Die Unterscheidung erfolgt hierbei durch den Parameter \textit{p} mit \textit{p} = \textit{q} = \textit{r}, wodurch die quadrierte euklidische Distanz für gewöhnlich nicht zu den $L_p$-Distanzen gezählt wird. \\
+Der Parameter \textit{r} bestimmt, wie stark größere Unterschiede in wenigen Variablen bzw. wie kleinere Unterschiede in vielen Variablen Einfluss nehmen. Beispielsweise gehen bei der City-Block-Distanz Merkmalswertdifferenzen proportional zu ihrem Ausmaß in die Objektdistanz ein, während Merkmalswertdifferenzen bei der euklidischen Distanz einen überproportional großen Einfluss besitzen \citep[Vgl.][S. 212]{Eckey.2002}. Die Verwendung des Namens $L_p$-Distanzmaße für die Maße aus der Minkowski-Metrik ist in der Literatur ebenfalls durchaus üblich. Die Unterscheidung erfolgt hierbei durch den Parameter \textit{p} mit \textit{p} = \textit{q} = \textit{r}, wodurch die quadrierte euklidische Distanz aufgrund ihrer voneinander verschiedenen Parameterwerten nicht zu den $L_p$-Distanzen gezählt werden kann. \\
 
 Des weiteren spielt im Falle von hoch korrelierten Merkmalen die Malahanobis-Distanz eine wichtige Rolle, da sie Korrelationen und Varianzen zwischen den Variablen beseitigt:
 
