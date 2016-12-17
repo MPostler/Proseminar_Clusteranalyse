@@ -23,11 +23,12 @@ Ausreißer -> viele Verfahren anfällig, vorher eliminieren oder auf geeignetes 
 
 \citet[S. 275]{Bacher.2010} empfehlen das Weighted-Average-Linkage-Verfahren, da es Dilatations- und Kontraktionseffekte sowie Inversionen vermeidet. Weiterhin ermöglicht das zugehörige Verschmelzungsschema im Gegensatz zu manch anderen Verfahren eine klare Interpretation. Es sollte eventuell doch auf ein anderes Verfahren zurückgegriffen werden, wenn die Daten nur ordinale Informationen aufweisen und Invarianz gegenüber monotonen Transformationen gewünscht ist oder wenn vermutet wird, dass sich die Cluster überlappen können. Bei Überlappungen hat sich das Complete Linkage-Verfahren bewährt.
 
-\section{Bewertung mithilfe des RAND-Index}
+\section{Bewertung mithilfe des Rand-Index}
 
-\citet[S. 270]{Everitt.2011} Die Anwendung mehrerer Clusteranalyseverfahren auf Grundlage der selben Datenmatrix führt oft zu einer ähnlichen Lösung. Ein Maß, um die Ähnlichkeit solcher Clusterlösungen bewerten zu können, ist der RAND-Index. Seine Grundlage bildet eine Vierfeldertafel, die aufzeigt, welche Objekte bei zwei unterschiedlichen Verfahren in den selben oder unterschiedlichen Clustern liegen:
+Die Anwendung mehrerer Clusteranalyseverfahren auf Grundlage der selben Datenmatrix führt oft zu einer ähnlichen Lösung und erlaubt dahingehend die Beurteilung der Brauchbarkeit einzelner Verfahren. Kommen mehrere Verfahren zum gleichen Ergebnis, bestätigt sich die zugrundeliegende Clusterstruktur meist. Hier ist jedoch zu beachten, dass die am häufigsten vorkommende Lösung nicht immer die optimale Lösung für den Problemfall darstellt, sondern auch eine Einzellösung für den Anwender brauchbar sein kann. \\
+Ein Maß, um die Ähnlichkeit von Clusterlösungen bewerten zu können, ist der Rand-Index. Seine Grundlage bildet eine Vierfeldertafel, die aufzeigt, welche Objekte bei zwei unterschiedlichen Verfahren in den selben oder unterschiedlichen Clustern liegen:
 
-\begin{tabular}{c>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{4cm}|c}
+\begin{tabular}{c>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}|c}
 	& & \multicolumn{2}{c|}{Verfahren B} & \\ 
 	& & Paare im selben Cluster & Paare in verschiedenen Clustern & $\sum$ \\ \hline
 	\multirow{2}{*}{Verfahren A} & Paare im selben Cluster & a & b & a + b \\
@@ -36,13 +37,13 @@ Ausreißer -> viele Verfahren anfällig, vorher eliminieren oder auf geeignetes 
 \end{tabular}
 \bigskip
 
-Sind diese Beobachtungen erfasst, kann der RAND-Index gebildet werden:
+Sind diese Beobachtungen erfasst, kann der Rand-Index gebildet werden:
 
 \begin{equation}
 RAND = \frac{a+d}{\binom{n}{2}}
 \end{equation}
 
-Basis hierfür ist die gleiche Clusteranzahl in beiden Lösungen. Ist dies nicht gegeben, so muss der RAND-Index mit einer Korrekturgröße ergänzt werden:
+Basis hierfür ist die gleiche Clusteranzahl in beiden Lösungen. Ist dies nicht gegeben, so muss der Rand-Index mit einer Korrekturgröße ergänzt werden:
 
  \begin{gather}
  RAND = \frac{a+d-f_c}{\binom{n}{2}-f_c} \quad \text{mit} \\
@@ -51,7 +52,7 @@ Basis hierfür ist die gleiche Clusteranzahl in beiden Lösungen. Ist dies nicht
  
  $G$ und $H$ sind die beiden zuvor ermittelten Clusterzahlen der Lösungen und $n_{g \bullet}$ bzw. $n_{ \bullet h}$ ergeben sich aus der Kreuztabellierung der Objekte hinsichtlich der erfolgten Clusterzuordnung: \\
  
-\centering
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|} 
 	\hline
 	& \multicolumn{4}{c|}{Verfahren B} & \\ \hline
@@ -61,4 +62,7 @@ Basis hierfür ist die gleiche Clusteranzahl in beiden Lösungen. Ist dies nicht
 	$C_G$ & $n_{nG1}$ & $n_{nG2}$ & \dots & $n_{GH}$ & $n_{4 \bullet}$ \\ \hline
 	$n_{\bullet h}$ & $n_{\bullet 1}$ & $n_{\bullet 2}$ & \dots & $n_{\bullet H}$ & $n$ \\ \hline
 \end{tabular}
+\end{center}
 \bigskip
+
+Der Rand-Index liegt im Wertebereich [0;1] und nimmt mit dem Grad der Konkordanz der Clusterlösungen zu. Ein maximaler Wert von 1 steht dabei für die Identität der beiden Lösungen \citep[Vgl.][S. 270-272]{Everitt.2011}. 
