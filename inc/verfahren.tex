@@ -1,5 +1,5 @@
 \chapter{Hierarchisch-agglomerative Verfahren}
-In diesem Kapitel sollen einzelne hierarchisch-agglomerative Verfahren untersucht werden, da sich divisive Verfahren in der praktischen Anwendung nicht bewährt haben. Der Grund hierfür ist die höhere Rechenzeit für Algorithmen der divisiven Verfahren in Verbindung mit dem Fehlen eines Nachweises, dass divisive Strategien präzisere Clusterlösungen liefern als agglomerative Verfahren. In der Praxis wird daher meist auf hierarchisch-agglomerative Verfahren zurückgegriffen \citep[Vgl.][S. ???]{Pedrycz.2010}.
+In diesem Kapitel sollen einzelne hierarchisch-agglomerative Verfahren untersucht werden, da sich divisive Verfahren in der praktischen Anwendung nicht bewährt haben. Der Grund hierfür ist die höhere Rechenzeit für Algorithmen der divisiven Verfahren in Verbindung mit dem Fehlen eines Nachweises, dass divisive Strategien präzisere Clusterlösungen liefern als agglomerative Verfahren. In der Praxis wird daher meist auf hierarchisch-agglomerative Verfahren zurückgegriffen \citep[Vgl.][S. 46]{Pedrycz.2010}.
 Nach \citet[S.378]{Piegorsch.2015} kann der Austausch des zugrundeliegenden Verfahrens Fluch oder Segen sein: Die Verwendung eines anderen Verfahrens auf Basis der selben Daten zeigt interessante oder unerwartete Änderungen im Ergebnis der Clusteranalyse. Dies ist eine Beobachtung, die den zugrundeliegenden Prozess der Wissensschöpfung verbessern kann.
 
 \section{Single Linkage-Verfahren}
@@ -10,15 +10,15 @@ Nach \citet[S.481]{Backhaus.2016} kann die neue Distanz vereinfacht mit folgende
 \end{equation}
 Wobei D(R,P) die Distanz zwischen den Objekten R und P, D(R,Q) die Distanz zwischen den Objekten R und Q und D(R;P+Q) die Distanz zwischen dem Objekt R und dem Cluster mit den Objekten P und Q ist.
 Aufgrund des Vorgehens wird dieses Verfahren auch "Nearest-Neighbour-Verfahren" genannt \citep[Vgl.][S.231]{Eckey.2002}.
-Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden um Ausreißer zu identifizieren \citep[Vgl.][S. 481-483]{Backhaus.2016}.
-Dieses Verfahren erzeugt oft Cluster, die ziemlich diffus, langgestreckt und/oder unförmig sind \citep[Vgl.][S. 377]{Piegorsch.2015}.
+Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden, um Ausreißer zu identifizieren \citep[Vgl.][S. 481-483]{Backhaus.2016}. Ausreißer sind Datenpunkte, die sich erheblich von den restlichen Daten abgrenzen und somit die Analyse verfälschen können.
+Das Single-Linkage-Verfahren erzeugt oft Cluster, die sehr diffus, langgestreckt und/oder unförmig sind \citep[Vgl.][S. 377]{Piegorsch.2015}.
 Hierbei entsteht allerdings auch das Problem des Verkettungseffekts: Cluster werden zusammengefasst, die nur durch eine Brücke verbunden sind, im Raum aber deutlich separiert voneinander liegen. Dies kann zu eher heterogenen Clustern führen, wie in Abbildung \ref{pic:klemm19} gut zu erkennen ist \citep[Vgl.][S. 233]{Eckey.2002}. 
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=5cm]{pics/klemm19.png}
 	\end{center}
-	\caption{Der Chaining-Effekt nach Klemm}
+	\caption{Der Chaining-Effekt nach \citet[S. 19]{Klemm.1995}}
 	\label{pic:klemm19}
 \end{figure}
 
@@ -45,18 +45,31 @@ Nach \citet[S. 264]{Bacher.2010} lässt sich der Mittelwert mithilfe von drei ve
 	\item Weighted-Average-Linkage
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i}n_{p} + u_{q,i}n_{q}}{n_{p} + n_{q}}
+		\label{Formel Weighted}
 	\end{equation}
 	Hier werden Merkmalsausprägungen in kleinen Clustern höher gewichtet als Merkmalsausprägungen in großen Clustern \citep[Vgl.][S. 79]{Everitt.2011}.
-	\item Within-Average-Linkage \colorbox{red}{selbe Formel wie Weighted-Average-Linkage? -> ja, weil sie sich nur minimal unterscheiden (zweite Formel S. 265 + Erklärung darunter. Deshalb Vorschlag: Wir nehmen hier nicht schon wieder Bacher, sondern verwenden eine andere gute Quelle ohne Within(könnte ich morgen machen), bleiben aber in der gleichen Notation wie Bacher, um Missverständnisse zu vermeiden)}
+	\item Within-Average-Linkage 
+	Im Grunde ist das Within-Average-Linkage mit dem Weighted-Average-Linkage vergleichbar, da sie die selbe Berechnungsformel \ref{Formel Weighted} verwenden. Das Within-Average-Linkage-Verfahren unterscheidet sich nur bei der Suche nach der kleinsten Unähnlichkeit: 
+	
+	\begin{equation}
+	u_{p,q}^* = \frac{
+					\frac{2}{n_p(n_p-1)}
+					\cdot u_{p,p}+
+					\frac{2}{n_q(n_q-1)}
+					\cdot u_{q,q}+n_pn_qu_{p,q}
+				}
+				{
+				\frac{(n_p+n_q)\cdot(n_p+n_q-1)}{2}
+				}
+	\end{equation}
+
 \end{enumerate}
 Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern q und i.
 Dieses Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 264-266]{Bacher.2010}. 
 
 \section{Centroid-Verfahren}
-Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentaten für den jeweiligen Cluster dienen. Dabei werden jeweils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 285-289]{Bacher.2010}. Nach \citet[S. 79]{Everitt.2011} dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen beiden.
-\citet[S. 243]{Eckey.2002} weisen auf das Problem hin, dass die Bildung eher heterogener Cluster nicht auszuschließen ist, sofern die Clusterzentren nur nahe genug beieinander liegen.
-
-\colorbox{red}{Reminder: Hier kommt auch das Problem mit den Umkehrungen/Inversionen für Centroid, Median, Ward}
+Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentanten für den jeweiligen Cluster dienen. Dabei werden jeweils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 285-289]{Bacher.2010}. Nach \citet[S. 79]{Everitt.2011} dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen beiden.
+\citet[S. 243]{Eckey.2002} weisen auf das Problem hin, dass die Bildung eher heterogener Cluster nicht auszuschließen ist, sofern die Clusterzentren nur nahe genug beieinander liegen. Bei diesem und allen hier nachfolgend behandelten Verfahren ist es möglich, dass Inversionen auftreten. Eine Inversion ist ein zwischenzeitliches Steigen der Innerklassenverschiedenheit bei der Fusion, um später in einem nächsten Schritt zwei Cluster fusionieren zu können, die die Innerklassenverschiedenheit wieder senken. Gesamtheitlich gesehen reduziert sich also die Innerklassenverschiedenheit.
 
 \section{Median-Verfahren}
 Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative Daten zur Berechnung. Ebenso werden die Clusterpaare zusammengefasst, deren euklidische Distanz zu dem Clusterzentrum minimal ist. Nach dem Zusammenfassen der Clusterpaare wird das neue Clusterzentrum errechnet. Dafür wird der Median aus den zwei alten Clusterzentren gebildet. Dies geschieht nach \citet[S. 286]{Bacher.2010} nach folgender Formel:

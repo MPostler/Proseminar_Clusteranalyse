@@ -1,11 +1,9 @@
-\chapter{Regelwerk}
-
-Aufbauend auf den vorherigen zwei Kapiteln soll hier ein festes Regelwerk in Form eines Entscheidungsbaumes entstehen, das die Vorgehensweise bei unterschiedlichen Datenstrukturen und Anforderungsszenarien aufzeigt und dem Anwender die Auswahl für ein geeignetes Verfahren erleichtert.
+\chapter{Anwendungsempfehlungen}
 
 Nach \citet[S. 510]{Backhaus.2016} müssen einige Vorüberlegungen vorab gestellt werden, um das ideale Clusteranalyseverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
 \begin{enumerate}
     \item Anzahl der Objekte
-    \item Problem der Ausreißer \colorbox{red}{Wir müssen noch erklären, was Ausreißer sind}
+    \item Problem der Ausreißer
     \item Anzahl der betrachteten Merkmale
     \item Gewichtung der Merkmale
     \item Vergleichbarkeit der Merkmale
@@ -15,8 +13,52 @@ Das Single Linkage-Verfahren erweist sich gegenüber Ausreißern als sehr robust
 
 \colorbox{red}{Vielleicht lieber andere Kriterien als bei Backhaus?? (z.B. Proximitätsmaß, Ausreißer, Gruppengröße) -> Können wir gerne noch ergänzen. Bisher haben wir viel dafür direkt bei den einzelnen Verfahren stehen. Dort rausnehmen und hier ergänzen?eher dort stehen lassen}
 
-Das Single Linkage-Verfahren sollte gewählt werden, wenn die Homogenität wichtiger ist als die Heterogenität und wenn eher wenige, dafür größere Cluster erzeugt werden sollen. Zudem sollte es genutzt werden, um Ausreißer zu identifizieren. Allerdings muss die Tendenz zur Kettenbildung beachtet werden.
+Das Single Linkage-Verfahren sollte gewählt werden, wenn die Homogenität innerhalb der Cluster wichtiger ist als die Heterogenität zwischen den Clustern und wenn eher wenige, dafür größere Cluster erzeugt werden sollen. Zudem sollte es genutzt werden, um Ausreißer zu identifizieren. Allerdings muss die Tendenz zur Kettenbildung beachtet werden.
 
-Das Complete Linkage-Verfahren sollte gewählt werden, wenn die Heterogenität wichtiger als die Homogenität ist und wenn eher mehrere, kleinere Cluster erzeugt werden sollen. Dieses Verfahren eignet sich nicht, um Ausreißer zu identifizieren.
+Das Complete Linkage-Verfahren sollte gewählt werden, wenn die Heterogenität wichtiger als die Innerklassengleichheit ist und wenn eher mehrere, kleinere Cluster erzeugt werden sollen. Dieses Verfahren eignet sich nicht, um Ausreißer zu identifizieren.
 
 Das Average Linkage-Verfahren sollte genutzt werden, wenn Homogenität und Heterogenität ungefähr gleich gewichtet sind.
+
+Ausreißer -> viele Verfahren anfällig, vorher eliminieren oder auf geeignetes Verfahren achten
+
+\citet[S. 275]{Bacher.2010} empfehlen das Weighted-Average-Linkage-Verfahren, da es Dilatations- und Kontraktionseffekte sowie Inversionen vermeidet. Weiterhin ermöglicht das zugehörige Verschmelzungsschema im Gegensatz zu manch anderen Verfahren eine klare Interpretation. Es sollte eventuell doch auf ein anderes Verfahren zurückgegriffen werden, wenn die Daten nur ordinale Informationen aufweisen und Invarianz gegenüber monotonen Transformationen gewünscht ist oder wenn vermutet wird, dass sich die Cluster überlappen können. Bei Überlappungen hat sich das Complete Linkage-Verfahren bewährt.
+
+\section{Bewertung mithilfe des RAND-Index}
+
+\citet[S. 270]{Everitt.2011} Die Anwendung mehrerer Clusteranalyseverfahren auf Grundlage der selben Datenmatrix führt oft zu einer ähnlichen Lösung. Ein Maß, um die Ähnlichkeit solcher Clusterlösungen bewerten zu können, ist der RAND-Index. Seine Grundlage bildet eine Vierfeldertafel, die aufzeigt, welche Objekte bei zwei unterschiedlichen Verfahren in den selben oder unterschiedlichen Clustern liegen:
+
+\begin{tabular}{c>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{4cm}>{\centering\arraybackslash}p{4cm}|c}
+	& & \multicolumn{2}{c|}{Verfahren B} & \\ 
+	& & Paare im selben Cluster & Paare in verschiedenen Clustern & $\sum$ \\ \hline
+	\multirow{2}{*}{Verfahren A} & Paare im selben Cluster & a & b & a + b \\
+	& Paare in verschiedenen Clustern & c & d & c + d \\ \hline
+	& $\sum$ & a + c & b + d & $\binom{n}{2}$ \\ 
+\end{tabular}
+\bigskip
+
+Sind diese Beobachtungen erfasst, kann der RAND-Index gebildet werden:
+
+\begin{equation}
+RAND = \frac{a+d}{\binom{n}{2}}
+\end{equation}
+
+Basis hierfür ist die gleiche Clusteranzahl in beiden Lösungen. Ist dies nicht gegeben, so muss der RAND-Index mit einer Korrekturgröße ergänzt werden:
+
+ \begin{gather}
+ RAND = \frac{a+d-f_c}{\binom{n}{2}-f_c} \quad \text{mit} \\
+ f_c = \frac{n\cdot(n^2+1)-(n+1)\cdot\sum_{g=1}^{G}n_{g \bullet}^2-(n+1)\cdot\sum_{h=1}^{H}n_{\bullet h}^2+2\cdot\sum_{g=1}^{G}\sum_{h=1}^{H}n_{g \bullet}^2n_{ \bullet h}^2/n}{2\cdot(n-1)}
+ \end{gather}
+ 
+ $G$ und $H$ sind die beiden zuvor ermittelten Clusterzahlen der Lösungen und $n_{g \bullet}$ bzw. $n_{ \bullet h}$ ergeben sich aus der Kreuztabellierung der Objekte hinsichtlich der erfolgten Clusterzuordnung: \\
+ 
+\centering
+\begin{tabular}{|c|c|c|c|c|c|} 
+	\hline
+	& \multicolumn{4}{c|}{Verfahren B} & \\ \hline
+	Verfahren A & $C_1$ & $C_2$ & \dots & $C_H$ & $n_g$ \\ \hline
+	$C_1$ & $n_{11}$ & $n_{12}$ & \dots & $n_{1H}$ & $n_{1 \bullet}$ \\
+	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+	$C_G$ & $n_{nG1}$ & $n_{nG2}$ & \dots & $n_{GH}$ & $n_{4 \bullet}$ \\ \hline
+	$n_{\bullet h}$ & $n_{\bullet 1}$ & $n_{\bullet 2}$ & \dots & $n_{\bullet H}$ & $n$ \\ \hline
+\end{tabular}
+\bigskip
