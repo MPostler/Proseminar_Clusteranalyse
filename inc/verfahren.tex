@@ -64,7 +64,7 @@ Nach \citet[S. 264]{Bacher.2010} lässt sich der Mittelwert mithilfe von drei ve
 	\end{equation}
 
 \end{enumerate}
-Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern q und i.
+Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern $q$ und $i$.
 Dieses Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 264-266]{Bacher.2010}. 
 
 \section{Centroid-Verfahren}
@@ -101,7 +101,7 @@ Im Verfahren werden jeweils die Objekte zusammengefasst, welche die Streuung inn
 	\rowcolor{beaublue}Single Linkage & kontrahierend & ja & alle & neigt zur Kettenbildung \\ \hline
 	\rowcolor{beaublue}Complete Linkage & dilatierend & ja & alle & neigt zu kleinen Gruppen \\ \hline	
 	\rowcolor{beaublue}Average Linkage & konservativ & ja & alle & \\ \hline
-	\rowcolor{beaublue}Centroid & konservativ & nein & Distanzmaße & \\ \hline
-	\rowcolor{beaublue}Median & konservativ & nein & Distanzmaße & \\ \hline
-	\rowcolor{beaublue}WARD & konservativ & ja & Distanzmaße & bildet etwa gleich große Gruppen \\ \hline
+	\rowcolor{beaublue}Centroid & konservativ & nein & metrisch & \\ \hline
+	\rowcolor{beaublue}Median & konservativ & nein & metrisch & \\ \hline
+	\rowcolor{beaublue}WARD & konservativ & ja & metrisch & bildet etwa gleich große Gruppen \\ \hline
 \end{tabular}
