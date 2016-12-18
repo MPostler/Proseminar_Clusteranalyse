@@ -2,7 +2,7 @@
 
 \section{Allgemeine Anwendungsempfehlungen}
 
-Nach \citet[S. 510]{Backhaus.2016} müssen einige Vorüberlegungen vorab gestellt werden, um das ideale Clusteranalyseverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
+Nach \citet[S. 510]{Backhaus.2016} müssen einige Vorüberlegungen vorab angestellt werden, um das ideale Clusteranalyseverfahren auswählen zu können. Die Vorüberlegungen sind folgende:
 \begin{enumerate}
     \item Anzahl der Objekte
     \item Problem der Ausreißer
@@ -18,6 +18,8 @@ Das Single Linkage-Verfahren sollte gewählt werden, wenn die Homogenität inner
 Das Complete Linkage-Verfahren sollte gewählt werden, wenn die Heterogenität wichtiger als die Innerklassengleichheit ist und wenn eher mehrere, kleinere Cluster erzeugt werden sollen. Dieses Verfahren eignet sich nicht, um Ausreißer zu identifizieren.
 
 Das Average Linkage-Verfahren sollte genutzt werden, wenn Homogenität und Heterogenität ungefähr gleich gewichtet werden sollen.
+
+Wird angenommen, dass ein Cluster nicht durch ein Objekt sinnvoll dargestellt werden kann, sondern mithilfe seines Zentrums dargestellt werden kann, sollte man das Median-, Centroid- oder Ward-Verfahren nutzen. Dabei eignet sich das Ward-Verfahren besonders bei hierarchischen Ähnlichkeitsbeziehung und wenn die Anzahl der Objekte gering ist. Das Median- und Centroid-Verfahren eignet sich schlechter als das Ward-Verfahren, da es zu Inversionen kommen kann. (Vgl.\citet[S.295]{Bacher.2010})
 
 \section{Umgang mit Ausreißern}
 
