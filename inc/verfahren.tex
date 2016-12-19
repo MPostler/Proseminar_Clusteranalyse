@@ -3,14 +3,13 @@ In diesem Kapitel sollen einzelne hierarchisch-agglomerative Verfahren untersuch
 Nach \citet[S.378]{Piegorsch.2015} kann der Austausch des zugrundeliegenden Verfahrens Fluch oder Segen sein: Die Verwendung eines anderen Verfahrens auf Basis der selben Daten zeigt interessante oder unerwartete Änderungen im Ergebnis der Clusteranalyse. Dies ist eine Beobachtung, die den zugrundeliegenden Prozess der Wissensschöpfung verbessern kann.
 
 \section{Single Linkage-Verfahren}
-Bei dem Single Linkage-Verfahren können sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Dabei werden jeweils die zwei Cluster zusammengefasst, welche die kleinste Distanz zwischen sich aufweisen. Die Distanz entspricht dabei der kleinstmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Nach dem Bilden eines neuen Clusters müssen die Distanzen jeweils neu ausgerechnet werden und die neue Minimaldistanz identifiziert werden.
+Beim Single Linkage-Verfahren (auch \textit{Nearest-Neighbour-Verfahren})können sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Dabei werden jeweils die zwei Cluster zusammengefasst, welche die kleinste Distanz zwischen sich aufweisen. Die Distanz entspricht dabei der kleinstmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Nach dem Bilden eines neuen Clusters müssen die Distanzen jeweils neu ausgerechnet werden und die neue Minimaldistanz identifiziert werden.
 Nach \citet[S.481]{Backhaus.2016} kann die neue Distanz vereinfacht mit folgender Formel errechnet werden:
 \begin{equation}
 	D(R;P+Q) = min\{D(R,P);D(R,Q)\}
 \end{equation}
-Wobei D(R,P) die Distanz zwischen den Objekten R und P, D(R,Q) die Distanz zwischen den Objekten R und Q und D(R;P+Q) die Distanz zwischen dem Objekt R und dem Cluster mit den Objekten P und Q ist.
-Aufgrund des Vorgehens wird dieses Verfahren auch "Nearest-Neighbour-Verfahren" genannt \citep[Vgl.][S.231]{Eckey.2002}.
-Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden, um Ausreißer zu identifizieren \citep[Vgl.][S. 481-483]{Backhaus.2016}. Ausreißer sind Datenpunkte, die sich erheblich von den restlichen Daten abgrenzen und somit die Analyse verfälschen können.
+Wobei $D(R,P)$ die Distanz zwischen den Objekten $R$ und $P$, $D(R,Q)$ die Distanz zwischen den Objekten $R$ und $Q$ und $D(R;P+Q)$ die Distanz zwischen dem Objekt $R$ und dem Cluster mit den Objekten $P$ und $Q$ ist.
+Dieses Verfahren ist ein kontrahierendes Verfahren. Zudem kann es genutzt werden, um Ausreißer \footnote{Ausreißer sind Datenpunkte, die sich erheblich von den restlichen Daten abgrenzen und somit die Analyse verfälschen können.} zu identifizieren \citep[Vgl.][S. 481-483]{Backhaus.2016}. 
 Das Single-Linkage-Verfahren erzeugt oft Cluster, die sehr diffus, langgestreckt und/oder unförmig sind \citep[Vgl.][S. 377]{Piegorsch.2015}.
 Hierbei entsteht allerdings auch das Problem des Verkettungseffekts: Cluster werden zusammengefasst, die nur durch eine Brücke verbunden sind, im Raum aber deutlich separiert voneinander liegen. Dies kann zu eher heterogenen Clustern führen, wie in Abbildung \ref{pic:klemm19} gut zu erkennen ist \citep[Vgl.][S. 233]{Eckey.2002}. 
 
@@ -22,34 +21,34 @@ Hierbei entsteht allerdings auch das Problem des Verkettungseffekts: Cluster wer
 	\label{pic:klemm19}
 \end{figure}
 
-Nach \citet[S. 416]{Clarke.2009} sind solche ungewöhnlichen Strukturen in der Natur allerdings durchaus üblich. Er zitiert: "...it's unclear in general wehether such properties are features or bugs." Der Einfluss solcher Fusionierungseigenschaften ist noch nicht vollständig untersucht.
+Nach \citet[S. 416]{Clarke.2009} sind solche ungewöhnlichen Datenstrukturen in der Natur allerdings durchaus üblich. Er zitiert: "...it's unclear in general whether such properties are features or bugs."  Der Einfluss solcher Fusionierungseigenschaften ist noch nicht vollständig untersucht.
 
 \section{Complete Linkage-Verfahren}
-Bei dem Complete Linkage-Verfahren können ebenfalls sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Es werden jeweils die Cluster mit der geringsten Distanz zusammengefasst. Die Distanz berechnet sich allerdings anders als beim Single Linkage-Verfahren. Die Distanz zwischen Clustern entspricht hier nicht der kleinstmöglichen, sondern der größtmöglichen Distanz zwischen Objekten der verschiedenen Cluster. Auch hier muss nach jedem Zusammenfassen zweier Cluster die Distanzen jeweils neu ausgerechnet werden und die neue Maximaldistanz identifiziert werden.
+Bei dem Complete Linkage-Verfahren können ebenfalls sowohl Ähnlichkeits- als auch Distanzmaße verwendet werden. Es werden jeweils die Cluster mit der geringsten Distanz zusammengefasst. Die Distanz berechnet sich allerdings anders als beim Single Linkage-Verfahren. Die Distanz zwischen Clustern entspricht hier nicht der kleinstmöglichen, sondern der größtmög- \linebreak lichen Distanz zwischen Objekten der verschiedenen Cluster. Auch hier muss nach jedem Zusammenfassen zweier Cluster die Distanzen jeweils neu ausgerechnet werden und die neue Maximaldistanz identifiziert werden.
 Nach \citet[S.483]{Backhaus.2016} kann die neue Distanz vereinfacht mit folgender Formel errechnet werden:                                                                                                                                                                                                                                                                                                                                                               
 \begin{equation}
 	D(R;P+Q) = max\{D(R,P);D(R,Q)\}
 \end{equation}
 Aufgrund des Vorgehens wird dieses Verfahren auch "Furthest-Neighbour-Verfahren" genannt.
-Dieses Verfahren ist ein dilatierendes Verfahren. Es eignet sich im Gegensatz zum Single Linkage- Verfahren nicht gut, um Ausreißer zu identifizieren, da es eher kleine Gruppen bildet \citep[Vgl.][S. 483/484]{Backhaus.2016}. Ein Problem der Orientierung an den maximal entfernten Objekten zweier Cluster stellt das Ausbleiben einer Fusionierung dar, selbst wenn die mittlere Distanz dieser zweier Objekte keine merkliche Erhöhung der Heterogenität im neu zu bildenden Cluster anzeigen würde \citep[Vgl.][S. 236]{Eckey.2002}.
+Dieses Verfahren ist ein dilatierendes Verfahren. Es eignet sich im Gegensatz zum Single Link- \linebreak age- Verfahren nicht gut, um Ausreißer zu identifizieren, da es eher kleine Gruppen bildet \citep[Vgl.][S. 483/484]{Backhaus.2016}. Ein Problem der Orientierung an den maximal entfernten Objekten zweier Cluster stellt das Ausbleiben einer Fusionierung dar, selbst wenn die mittlere Distanz dieser zweier Objekte keine merkliche Erhöhung der Heterogenität im neu zu bildenden Cluster anzeigen würde \citep[Vgl.][S. 236]{Eckey.2002}.
 
 \section{Average Linkage-Verfahren}
-Das Average Linkage-Verfahren ist eine Modifikation vom Single und Complete Linkage-Verfahren. Dadurch wird versucht die Vorteile der beiden Verfahren zu kombinieren und die Nachteile zu eliminieren. Die Distanz berechnet sich dabei auf Grundlage einer Durchschnittsbildung von den Distanzen der vereinten Objekten.
+Das Average Linkage-Verfahren ist eine Modifikation vom Single und Complete Linkage-Ver- \linebreak fahren. Dadurch wird versucht die Vorteile der beiden Verfahren zu kombinieren und die Nachteile zu eliminieren. Dieses Verfahren ist deshalb ein konservatives Verfahren \citep[Vgl.][S. 264-266]{Bacher.2010}. Die Distanz berechnet sich dabei auf Grundlage einer Durchschnittsbildung von den Distanzen der vereinten Objekten.
 Nach \citet[S. 264]{Bacher.2010} lässt sich der Mittelwert mithilfe von drei verschiedenen Verfahren berechnen:
 \begin{enumerate}
-	\item Average-Linkage
+	\item \textit{Average-Linkage} \\
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i} + u_{q,i}}{2}
 	\end{equation}
 	Hier findet eine einfache Durchschnittsbildung statt. \citet[S. 79]{Everitt.2011} beschreibt dieses Verfahren als relativ robust und dazu geneigt, Cluster mit geringen Varianzen zu fusionieren.
-	\item Weighted-Average-Linkage
+	\item \textit{Weighted-Average-Linkage} \\
 	\begin{equation}
 		u_{(p+q),i} = \frac{u_{p,i}n_{p} + u_{q,i}n_{q}}{n_{p} + n_{q}}
 		\label{Formel Weighted}
 	\end{equation}
 	Hier werden Merkmalsausprägungen in kleinen Clustern höher gewichtet als Merkmalsausprägungen in großen Clustern \citep[Vgl.][S. 79]{Everitt.2011}.
-	\item Within-Average-Linkage 
-	Im Grunde ist das Within-Average-Linkage mit dem Weighted-Average-Linkage vergleichbar, da sie die selbe Berechnungsformel \ref{Formel Weighted} verwenden. Das Within-Average-Linkage-Verfahren unterscheidet sich nur bei der Suche nach der kleinsten Unähnlichkeit: 
+	\item \textit{Within-Average-Linkage} \\
+	Im Grunde ist das Within-Average-Linkage mit dem Weighted-Average-Linkage vergleichbar, da sie die selbe Berechnungsformel \ref{Formel Weighted} verwenden. Das Within-Average-Link- \linebreak age-Verfahren unterscheidet sich nur bei der Suche nach der kleinsten Unähnlichkeit: 
 	
 	\begin{equation}
 	u_{p,q}^* = \frac{
@@ -62,17 +61,15 @@ Nach \citet[S. 264]{Bacher.2010} lässt sich der Mittelwert mithilfe von drei ve
 				\frac{(n_p+n_q)\cdot(n_p+n_q-1)}{2}
 				}
 	\end{equation}
-
-\end{enumerate}
-Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern $q$ und $i$.
-Dieses Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 264-266]{Bacher.2010}. 
+	Dabei bezeichnet $u_{p,i}$ die Unähnlichkeit zwischen den Clustern p und i, $u_{q,i}$ die Unähnlichkeit zwischen den Clustern $q$ und $i$.
+\end{enumerate} 
 
 \section{Centroid-Verfahren}
-Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentanten für den jeweiligen Cluster dienen. Dabei werden jeweils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 285-289]{Bacher.2010}. Nach \citet[S. 79]{Everitt.2011} dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen beiden.
-\citet[S. 243]{Eckey.2002} weisen auf das Problem hin, dass die Bildung eher heterogener Cluster nicht auszuschließen ist, sofern die Clusterzentren nur nahe genug beieinander liegen. Bei diesem und allen hier nachfolgend behandelten Verfahren ist es möglich, dass Inversionen auftreten. Eine Inversion ist ein zwischenzeitliches Steigen der Innerklassenverschiedenheit bei der Fusion, um später in einem nächsten Schritt zwei Cluster fusionieren zu können, die die Innerklassenverschiedenheit wieder senken. Gesamtheitlich gesehen reduziert sich also die Innerklassenverschiedenheit.
+Das Centroid-Verfahren benötigt zur Berechnung quantitative Daten. Bei diesem Verfahren werden Clusterzentren gebildet, welche als Repräsentanten für den jeweiligen Cluster dienen. Dabei werden jeweils die Clusterpaare zusammengefasst, deren euklidische Distanz zum Clusterzentrum am geringsten ist. Nachdem die Clusterpaare zusammengefasst wurden, muss das Clusterzentrum neu berechnet werden. Die ständige Neuberechnung des Clusterzentrums kann man umgehen, wenn man stattdessen die Unähnlichkeit der Objekte berechnet. Das Centroid-Verfahren ist ein konservatives Verfahren \citep[Vgl.][S. 285-289]{Bacher.2010}. Nach \citet[S. 79]{Everitt.2011} dominiert nach einer Fusionierung der größere Cluster von den ursprünglichen beiden.
+\citet[S. 243]{Eckey.2002} weisen auf das Problem hin, dass die Bildung eher heterogener Cluster nicht auszuschließen ist, sofern die Clusterzentren nur nahe genug beieinander liegen. Bei diesem und allen hier nachfolgend behandelten Verfahren ist es möglich, dass Inversionen\footnote{Eine Inversion ist ein zwischenzeitliches Steigen der Innerklassenverschiedenheit bei einer Fusion, um später in einer nächsten Fusion zwei Cluster so fusionieren zu können, dass ihre Innerklassenverschiedenheit wieder sinkt. Gesamtheitlich gesehen reduziert sich dabei die Innerklassenverschiedenheit.} auftreten.
 
 \section{Median-Verfahren}
-Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative Daten zur Berechnung. Ebenso werden die Clusterpaare zusammengefasst, deren euklidische Distanz zu dem Clusterzentrum minimal ist. Nach dem Zusammenfassen der Clusterpaare wird das neue Clusterzentrum errechnet. Dafür wird der Median aus den zwei alten Clusterzentren gebildet. Dies geschieht nach \citet[S. 286]{Bacher.2010} nach folgender Formel:
+Das Median-Verfahren benötigt genauso, wie das Centroid-Verfahren quantitative Daten zur Berechnung. Ebenso werden die Clusterpaare zusammengefasst, deren euklidische Distanz zu dem Clusterzentrum minimal ist. Nach dem Zusammenfassen der Clusterpaare wird das neue Clusterzentrum errechnet. Dafür wird der Median aus den zwei alten Clusterzentren gebildet. Dies geschieht gemäß \citet[S. 286]{Bacher.2010} nach folgender Formel:
 \begin{equation}
 	x_{(p+q),j} = \frac{x_{pj} + x_{qj}}{2}
 \end{equation}
@@ -95,13 +92,14 @@ Im Verfahren werden jeweils die Objekte zusammengefasst, welche die Streuung inn
 
 \section{Zusammenfassung der behandelten Verfahren}
 \citet[S. 489]{Backhaus.2016} geben einen guten Überblick über alle hier behandelten Verfahren: \\
+
 \begin{tabular}{|l|l|l|l|p{3.7cm}|}
 	\hline
 	\rowcolor{babyblueeyes}Verfahren & Eigenschaft & Monoton? & Proximitätsmaße & Bemerkungen \\ \hline
 	\rowcolor{beaublue}Single Linkage & kontrahierend & ja & alle & neigt zur Kettenbildung \\ \hline
 	\rowcolor{beaublue}Complete Linkage & dilatierend & ja & alle & neigt zu kleinen Gruppen \\ \hline	
 	\rowcolor{beaublue}Average Linkage & konservativ & ja & alle & \\ \hline
-	\rowcolor{beaublue}Centroid & konservativ & nein & metrisch & \\ \hline
-	\rowcolor{beaublue}Median & konservativ & nein & metrisch & \\ \hline
-	\rowcolor{beaublue}WARD & konservativ & ja & metrisch & bildet etwa gleich große Gruppen \\ \hline
+	\rowcolor{beaublue}Centroid & konservativ & nein & Distanzmaße & \\ \hline
+	\rowcolor{beaublue}Median & konservativ & nein & Distanzmaße & \\ \hline
+	\rowcolor{beaublue}WARD & konservativ & ja & Distanzmaße & bildet etwa gleich große Gruppen \\ \hline
 \end{tabular}

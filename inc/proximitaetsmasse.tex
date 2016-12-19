@@ -15,7 +15,7 @@ u_{ij} = 1 - \ddot{a}_{ij} \quad \text{bzw.} \quad u_{g,g*} = 1- \ddot{a}_{g,g*}
 in Distanzmaße \textit{u} umwandeln. Durch unterschiedliche Skalenniveaus der betrachteten Merkmale lassen sich nun eine Vielzahl von unterschiedlichen Proximitätsmaßen bestimmen.
 
 \section{Proximitätsmaße für dichotome Merkmale}
-Es kann von dichotomen Merkmalen (auch binären Merkmalen) gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen \citep[Vgl.][S. 218]{Eckey.2002}. 
+Es kann von dichotomen Merkmalen bzw. von binären Merkmalen gesprochen werden, wenn deren Modalitäten mit 0 und 1 kodiert werden; polytome Merkmale hingegen besitzen mehrere Ausprägungen \citep[Vgl.][S. 218]{Eckey.2002}. 
 
 Um die Kombinationen der Merkmalsausprägungen bei einem Variablenpaar $i,j$ bzw. Objektpaar $g,g*$ zu definieren, kommt oft eine Kontingenztabelle (auch Vierfeldertafel) zum Einsatz: \\
 
@@ -56,14 +56,14 @@ Polytome Merkmale können auf einem nominalen oder ordinalen Skalenniveau gemess
 Bei diesen Merkmalen wird von einzelnen Hierarchieebenen ausgegangen, denen ein Wert stellvertretend für die Aggregation der Hierarchie zugewiesen wird. Ausgehend von einer Baumstruktur der verästelten hierarchischen Merkmale wird untersucht, auf welcher Hierarchieebene zwei Merkmalsausprägungen zusammentreffen. Anhand dieser Beobachtung kann ihnen dann eine spezifische Distanz zugeordnet werden \citep[Vgl.][S. 160]{Bankhofer.2008}. Ein Beispiel hierfür wäre die Zugehörigkeit von zwei Studiengängen zu Fakultäten. Will man nun herausfinden, welche Distanz anhand dieser Zuordnung zwischen den beiden Studiengängen existiert, kann untersucht werden, ob die zwei Studiengänge der selben oder unterschiedlichen Fakultäten angehören. Je nach ihrem Zusammentreffen auf Fakultäts- oder erst auf Universitätsebene (sie gehören unterschiedlichen Fakultäten an) werden ihnen unterschiedliche Distanzen zugewiesen.
 
 \section{Proximitätsmaße für quantitative Merkmale}
-Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten bzw. gewöhnlichen Minkowski-Metrik ableiten \citep[Vgl.][S. 219]{Bacher.2010}:
+Bei einer objektorientierten Clusteranalyse wird vor allem von Distanzmaßen ausgegangen, die sich aus der verallgemeinerten bzw. gewöhnlichen Minkowski-Metrik\footnote{Man spricht von einer gewöhnlichen Minkowski-Metrik, wenn \textit{q} = \textit{r} gesetzt wird.} ableiten \citep[Vgl.][S. 219]{Bacher.2010}:
 
 \begin{equation}
 d(q,r)_{g,g*} = 
 \left[	\sum_{i} |x_{gi} - x_{g*i}|^r	\right]^\frac{1}{q}
 \end{equation}
 
-Man spricht von einer gewöhnlichen Minkowski-Metrik, wenn \textit{q} = \textit{r} gesetzt wird. Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmale unterscheiden:
+Anhand der Parameter lassen sich verschiedene Distanzmaße für einzelne Merkmale unterscheiden:
 \begin{center}
 \begin{tabular}{lcll}
 	\textit{r} = 1 & und & \textit{q} = 1 & für die City-Block-Distanz \\

@@ -5,10 +5,10 @@ Nach \citet[S. 158-163]{Bankhofer.2008} können erfasste Merkmale in quantitativ
 Quantitative Merkmal besitzen einen hohen Informationsgehalt und ihre Ausprägungen werden mit Zahlen benannt. Qualitative Merkmale besitzen einen niedrigeren Informationsgehalt als quantitative Merkmale und werden durch Begriffe beschrieben. Qualitative Merkmale können weiterhin in nominale und in ordinale Merkmale unterschieden werden.
 
 \begin{enumerate}
-        \item \textit{Quantitative Merkmale}: Diese Merkmale werden auch kardinale oder metrische Merkmale genannt. Sie besitzen den höchstmöglichen Informationsgehalt. Die Merkmalsausprägungen sind Zahlen, welche eine Ordnung besitzen. Dabei können alle möglichen Merkmalsausprägungen auf Skalen geordnet werden. Dadurch kann man den Abstand, sowie das Verhältnis zwischen zwei Merkmalsausprägungen bestimmten.
-        \item \textit{Ordinale Merkmale}: Diese Merkmale gehören zu den qualitativen Merkmalen, wobei alle Merkmalsausprägungen durch Begriffe dargestellt werden und vollständig geordnet werden können. Durch diese Ordnung ist ein Vergleich zweier Merkmalsausprägungen möglich, wodurch man die Merkmalsausprägungen in Reihenfolgen bringen kann.
-        \item \textit{Nominale Merkmale}: Diese Merkmale gehören ebenfalls zu den qualitativen Merkmalen. Die Merkmalsausprägungen werden durch Begriffe dargestellt, wobei die Ausprägungen keine Ordnung besitzen. Die Ausprägungen können somit lediglich auf Gleichheit oder Ungleichheit überprüft werden. Diese Merkmale besitzen den niedrigsten Informationsgehalt.
-        \item \textit{Hierarchische Merkmale}: Einen Sonderfall stellen hierarchische Merkmale dar, bei denen einzelne Merkmalsausprägungen anderen Merkmalsausprägungen zugeordnet werden können. Ein Beispiel hierfür stellt die Zugehörigkeit eines Studienganges zu einer Fakultät dar oder die Zuordnung einer Stadt zu einem Bundesland.
+	\item \textit{Quantitative Merkmale}: Diese Merkmale werden auch kardinale oder metrische Merkmale genannt. Sie besitzen den höchstmöglichen Informationsgehalt. Die Merkmalsauspräg- \linebreak ungen sind Zahlen, welche eine Ordnung besitzen. Dabei können alle möglichen Merkmalsausprägungen auf Skalen geordnet werden. Dadurch kann man den Abstand, sowie das Verhältnis zwischen zwei Merkmalsausprägungen bestimmten.
+	\item \textit{Ordinale Merkmale}: Diese Merkmale gehören zu den qualitativen Merkmalen, wobei alle Merkmalsausprägungen durch Begriffe dargestellt werden und vollständig geordnet werden können. Durch diese Ordnung ist ein Vergleich zweier Merkmalsausprägungen möglich, wodurch man die Merkmalsausprägungen in Reihenfolgen bringen kann.
+	\item \textit{Nominale Merkmale}: Diese Merkmale gehören ebenfalls zu den qualitativen Merkmalen. Die Merkmalsausprägungen werden durch Begriffe dargestellt, wobei die Ausprägungen keine Ordnung besitzen. Die Ausprägungen können somit lediglich auf Gleichheit oder Ungleichheit überprüft werden. Diese Merkmale besitzen den niedrigsten Informationsgehalt.
+	\item \textit{Hierarchische Merkmale}: Einen Sonderfall stellen hierarchische Merkmale dar, bei denen einzelne Merkmalsausprägungen anderen Merkmalsausprägungen zugeordnet werden können. Ein Beispiel hierfür stellt die Zugehörigkeit eines Studienganges zu einer Fakultät dar oder die Zuordnung einer Stadt zu einem Bundesland.
 \end{enumerate}
 
 \section{Explorative und konfirmatorische Lösungen}
@@ -20,14 +20,14 @@ Bei konfirmatorischen Verfahren steht die Anzahl der Cluster und die Charakteris
 Nach \citet[S. 175]{Bankhofer.2008} können Clusterlösungen in disjunkte und nicht disjunkte Lösungen unterteilt werden. Diese Klassifizierung der Cluster beschreibt ob Objekte mehreren Klassen zugeordnet werden können oder nur Bestandteil einer Klasse sind.
 \begin{enumerate}
     \item \textit{Disjunkte Lösungen}: Ein Objekt ist genau einer Klasse zugeordnet. Es kommt also nicht zu Überschneidungen von mehreren Klassen.
-    \item {Nicht-Disjunkte Lösungen}: Ein Objekt kann mehreren Klassen zugeordnet werden. Es können also Klassen existieren, welche gemeinsame Objekte besitzen. Diese Klassen können auch als überlappende oder überdeckende Klassen bezeichnet werden. Dabei ist zu beachten, dass Teilmengenbeziehungen zwischen Klassen ausgeschlossen sind.
+    \item \textit{Nicht-Disjunkte Lösungen}: Ein Objekt kann mehreren Klassen zugeordnet werden. Es können also Klassen existieren, welche gemeinsame Objekte besitzen. Diese Klassen können auch als überlappende oder überdeckende Klassen bezeichnet werden. Dabei ist zu beachten, dass Teilmengenbeziehungen zwischen Klassen ausgeschlossen sind.
 \end{enumerate}
 
 \section{Exhaustive und nicht-exhaustive Zuordnung}
 Nach \citet[S. 174]{Bankhofer.2008} können Cluster unterteilt werden, ob alle Objekte der Datenmenge bei der Klassifizierung einbezogen werden oder nicht. Auf Grundlage dieses Klassifikationstyps kann man Cluster in zwei Gruppen unterteilen:
 \begin{enumerate}
     \item \textit{Exhaustive Zuordnung}: Alle Objekte der verarbeiteten Datenmenge werden klassifiziert.
-    \item \textit{Nicht Exhaustive Zuordnung}: Nur ein Teil der Ausgangsdatenmenge wird klassifiziert. Die nicht berücksichtigten Objekte werden vernachlässigt.
+    \item \textit{Nicht-exhaustive Zuordnung}: Nur ein Teil der Ausgangsdatenmenge wird klassifiziert. Die nicht berücksichtigten Objekte werden vernachlässigt.
 \end{enumerate}
 
 \section{Homogenität innerhalb der Cluster}
@@ -38,8 +38,10 @@ Nach \citet[S. 181]{Bankhofer.2008} kann die Homogenität durch die Innerklassen
 h(K)= \frac{1}{c} \sum_{i} d(i,j) \quad \text{mit} \quad i,j \in K,\: i<j
 \end{equation}
 
+Dieses Verfahren skaliert für alle Clustergrößen gleich gut und sollte der maximalen Distanz bevorzugt werden.
+
 \section{Heterogenität zwischen den Clustern}
-Die Heterogenität zwischen den Clustern beschreibt, wie verschieden die Objekte von verschiedenen Clustern sind. Die Objekte von verschiedenen Clustern sollen minimal homogen sein. Die Objekte sollen heterogen, also verschieden sein \citep[Vgl.][S. 16]{Bacher.2010}.
+Die Heterogenität zwischen den Clustern beschreibt, wie verschieden die Objekte von verschiedenen Clustern sind. Die Objekte von verschiedenen Clustern sollten minimal homogen aber maximal heterogen sein \citep[Vgl.][S. 16]{Bacher.2010}.
 Nach \citet[S. 181]{Bankhofer.2008} kann die Heterogenität durch die Zwischenklassenverschiedenheit beschrieben werden. Diese Verschiedenheit wird anhand von Distanzen dargestellt. Diese Distanzen können auf Grundlage von verschiedenen Methoden berechnet werden:
 \begin{enumerate}
         \item \textit{Single Linkage}: Die minimale Distanz zwischen zwei Objekten der betrachteten Cluster wird zur Darstellung genutzt.
@@ -47,7 +49,6 @@ Nach \citet[S. 181]{Bankhofer.2008} kann die Heterogenität durch die Zwischenkl
         \item \textit{Complete Linkage}: Die maximale Distanz zwischen zwei Objekten der betrachteten Cluster wird zur Darstellung genutzt.
 \end{enumerate}
 Dabei dürfen die Verfahren zur Bewertung der Heterogenität nicht mit den gleichnamigen Clusteranalyseverfahren verwechselt werden. Die hier genannten Methoden ermitteln die Daten, um die Heterogenität der Cluster zu bestimmen. Bei den Clusteranalyseverfahren werden die Daten ermittelt, um das Clusterpaar zu ermitteln, welches als nächstes fusioniert wird. 
-\colorbox{red}{Verwechslung mit Verfahren? eventuell hier genauer abgrenzen} 
 
 \section{Fusionierungseigenschaften}
 Clusteranalyseverfahren lassen sich nach \citet[S. 488/489]{Backhaus.2016} anhand ihrer Fusionierungseigenschaften in drei Gruppen unterteilen:
